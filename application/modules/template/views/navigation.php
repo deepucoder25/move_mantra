@@ -31,59 +31,45 @@
     <div class="container">
       <!-- Desktop Top Bar -->
       <div class="top-bar-desktop d-none d-lg-flex justify-content-between align-items-center">
-        <!-- Left Side: Email & Phone -->
-        <div class="top-bar-left d-flex align-items-center gap-3">
+        <!-- Left Side: Email & Location -->
+        <div class="top-bar-left d-flex align-items-center gap-4">
           <a href="<?= $mailhtml ?>" class="d-flex align-items-center gap-2">
             <i class="bi bi-envelope"></i> <span><?= $mail ?></span>
           </a>
-          <span class="divider-line">|</span>
-          <a href="<?= $phonehtml ?>" class="d-flex align-items-center gap-2">
-            <i class="bi bi-telephone"></i> <span><?= $phone ?></span>
+          <span class="d-flex align-items-center gap-2">
+            <i class="bi bi-geo-alt-fill text-primary-light"></i> <span>Pan India Services</span>
+          </span>
+        </div>
+
+        <!-- Right Side: Support, Phone & Social Icons -->
+        <div class="top-bar-right d-flex align-items-center gap-4">
+          <span class="d-flex align-items-center gap-2">
+            <span>24/7 Customer Support</span>
+          </span>
+          <a href="<?= $phonehtml ?>" class="d-flex align-items-center gap-2 fw-semibold">
+            <i class="bi bi-telephone-fill text-primary-light"></i> <span><?= $phone ?></span>
           </a>
-        </div>
-
-        <!-- Middle-Left: Trust Badge & Happy Customers -->
-        <div class="top-bar-middle d-flex align-items-center gap-3">
-          <span class="top-badge-text d-flex align-items-center gap-2">
-            <i class="bi bi-shield-check text-primary-light"></i> <span>Verified & Trusted</span>
-          </span>
-          <span class="divider-line">|</span>
-          <span class="top-badge-text d-flex align-items-center gap-2">
-            <i class="bi bi-people"></i> <span><?= $happyClients ?> Happy Customers</span>
-          </span>
-        </div>
-
-        <!-- Right Side: Offer & Reviews Badges -->
-        <div class="top-bar-right d-flex align-items-center gap-2">
-          <span class="top-badge-pill highlight-offer">
-            <i class="bi bi-lightning-fill text-warning"></i> 10% OFF ON YOUR FIRST MOVE
-          </span>
-          <span class="top-badge-pill highlight-rating">
-            <i class="bi bi-star-fill text-warning"></i> <?= $ratingValue ?> Google Reviews
-          </span>
+          <!-- Social Icons -->
+          <div class="social-icons d-flex align-items-center gap-3 ms-2">
+            <a href="<?= !empty($facebookhtml) ? $facebookhtml : '#' ?>" aria-label="Facebook" target="_blank" rel="noopener"><i class="bi bi-facebook"></i></a>
+            <a href="<?= !empty($instagramhtml) ? $instagramhtml : '#' ?>" aria-label="Instagram" target="_blank" rel="noopener"><i class="bi bi-instagram"></i></a>
+            <a href="<?= !empty($youtubehtml) ? $youtubehtml : '#' ?>" aria-label="YouTube" target="_blank" rel="noopener"><i class="bi bi-youtube"></i></a>
+            <a href="<?= !empty($linkedinhtml) ? $linkedinhtml : '#' ?>" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+          </div>
         </div>
       </div>
 
       <!-- Mobile Top Bar -->
-      <div class="top-bar-mobile d-flex d-lg-none flex-column gap-2 py-1">
-        <!-- Row 1: Contact Info -->
-        <div class="d-flex justify-content-center align-items-center gap-3">
-          <a href="<?= $mailhtml ?>" class="d-flex align-items-center gap-1">
-            <i class="bi bi-envelope"></i> <span><?= $mail ?></span>
-          </a>
-          <span class="divider-line">|</span>
-          <a href="<?= $phonehtml ?>" class="d-flex align-items-center gap-1">
-            <i class="bi bi-telephone"></i> <span><?= $phone ?></span>
-          </a>
-        </div>
-        <!-- Row 2: Offer & Google Reviews -->
-        <div class="d-flex justify-content-center align-items-center gap-2">
-          <span class="top-badge-pill highlight-offer">
-            <i class="bi bi-lightning-fill text-warning"></i> 10% OFF ON YOUR FIRST MOVE
-          </span>
-          <span class="top-badge-pill highlight-rating">
-            <i class="bi bi-star-fill text-warning"></i> <?= $ratingValue ?> Google Reviews
-          </span>
+      <div class="top-bar-mobile d-flex d-lg-none justify-content-between align-items-center py-1">
+        <a href="<?= $phonehtml ?>" class="d-flex align-items-center gap-1 small text-white fw-semibold">
+          <i class="bi bi-telephone-fill text-primary-light"></i> <span><?= $phone ?></span>
+        </a>
+        <a href="<?= $mailhtml ?>" class="d-flex align-items-center gap-1 small text-white">
+          <i class="bi bi-envelope"></i> <span><?= $mail ?></span>
+        </a>
+        <div class="social-icons d-flex align-items-center gap-2 small">
+          <a href="<?= !empty($facebookhtml) ? $facebookhtml : '#' ?>" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="<?= !empty($instagramhtml) ? $instagramhtml : '#' ?>" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
         </div>
       </div>
     </div>
@@ -97,8 +83,9 @@
       ["@type" => "SiteNavigationElement", "name" => "Home", "url" => site_url()],
       ["@type" => "SiteNavigationElement", "name" => "About Us", "url" => site_url('about-us')],
       ["@type" => "SiteNavigationElement", "name" => "Services", "url" => site_url('our-services')],
-      ["@type" => "SiteNavigationElement", "name" => "Locations", "url" => site_url('our-branches')],
+      ["@type" => "SiteNavigationElement", "name" => "Network", "url" => site_url('our-branches')],
       ["@type" => "SiteNavigationElement", "name" => "Blog", "url" => site_url('blog')],
+      ["@type" => "SiteNavigationElement", "name" => "FAQs", "url" => site_url('faqs')],
       ["@type" => "SiteNavigationElement", "name" => "Contact Us", "url" => site_url('contact-us')],
       ["@type" => "SiteNavigationElement", "name" => "Track", "url" => site_url('tracking')]
     ]
@@ -118,65 +105,70 @@
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="desktop-nav d-none d-lg-flex align-items-center gap-4" itemscope
+      <nav class="desktop-nav d-none d-lg-flex align-items-center gap-3" itemscope
         itemtype="https://schema.org/SiteNavigationElement">
-        <a itemprop="url" href="<?= site_url() ?>" class="nav-link<?= $active_tab === 'home' ? ' active' : '' ?>"><span
-            itemprop="name">Home</span></a>
+        <a itemprop="url" href="<?= site_url() ?>" class="nav-link<?= $active_tab === 'home' ? ' active' : '' ?>">
+          <i class="bi bi-house-door me-1"></i><span itemprop="name">Home</span>
+        </a>
+        
         <div class="nav-item dropdown">
           <a href="<?= site_url('about-us') ?>"
-            class="nav-link dropdown-toggle<?= $active_tab === 'about' ? ' active' : '' ?>">About Us <i
-              class="bi bi-chevron-down ms-1"></i></a>
+            class="nav-link dropdown-toggle<?= $active_tab === 'about' ? ' active' : '' ?>">
+            <i class="bi bi-info-circle me-1"></i>About Us <i class="bi bi-chevron-down ms-1"></i>
+          </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item<?= $segment1 === 'about-us' ? ' active' : '' ?>"
-                href="<?= site_url('about-us') ?>">About Us</a></li>
+                href="<?= site_url('about-us') ?>"><i class="bi bi-building me-2 text-primary-brand"></i>About Us</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'why-choose-us' ? ' active' : '' ?>"
-                href="<?= site_url('why-choose-us') ?>">Why Choose Us</a></li>
+                href="<?= site_url('why-choose-us') ?>"><i class="bi bi-shield-check me-2 text-primary-brand"></i>Why Choose Us</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'faqs' ? ' active' : '' ?>"
-                href="<?= site_url('faqs') ?>">FAQ</a></li>
+                href="<?= site_url('faqs') ?>"><i class="bi bi-question-circle me-2 text-primary-brand"></i>FAQ</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'testimonials' ? ' active' : '' ?>"
-                href="<?= site_url('testimonials') ?>">Testimonial</a></li>
+                href="<?= site_url('testimonials') ?>"><i class="bi bi-star me-2 text-primary-brand"></i>Testimonial</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'photo-gallery' ? ' active' : '' ?>"
-                href="<?= site_url('photo-gallery') ?>">Photo Gallery</a></li>
+                href="<?= site_url('photo-gallery') ?>"><i class="bi bi-images me-2 text-primary-brand"></i>Photo Gallery</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'privacy-policy' ? ' active' : '' ?>"
-                href="<?= site_url('privacy-policy') ?>">Privacy Policy</a></li>
+                href="<?= site_url('privacy-policy') ?>"><i class="bi bi-shield-lock me-2 text-primary-brand"></i>Privacy Policy</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'terms-and-conditions' ? ' active' : '' ?>"
-                href="<?= site_url('terms-and-conditions') ?>">Terms &amp; Conditions</a></li>
+                href="<?= site_url('terms-and-conditions') ?>"><i class="bi bi-file-earmark-text me-2 text-primary-brand"></i>Terms &amp; Conditions</a></li>
           </ul>
         </div>
+
         <div class="nav-item dropdown">
           <a href="<?= site_url('our-services') ?>"
-            class="nav-link dropdown-toggle<?= $active_tab === 'services' ? ' active' : '' ?>">Services <i
-              class="bi bi-chevron-down ms-1"></i></a>
+            class="nav-link dropdown-toggle<?= $active_tab === 'services' ? ' active' : '' ?>">
+            <i class="bi bi-truck me-1"></i>Services <i class="bi bi-chevron-down ms-1"></i>
+          </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item<?= $segment1 === 'home-relocation' ? ' active' : '' ?>"
-                href="<?= site_url('home-relocation') ?>">Home Relocation</a></li>
+                href="<?= site_url('home-relocation') ?>"><i class="bi bi-house-gear me-2 text-primary-brand"></i>Home Relocation</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'office-relocation' ? ' active' : '' ?>"
-                href="<?= site_url('office-relocation') ?>">Office Relocation</a></li>
+                href="<?= site_url('office-relocation') ?>"><i class="bi bi-building-gear me-2 text-primary-brand"></i>Office Relocation</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'car-transportation' ? ' active' : '' ?>"
-                href="<?= site_url('car-transportation') ?>">Car Transportation</a></li>
+                href="<?= site_url('car-transportation') ?>"><i class="bi bi-car-front me-2 text-primary-brand"></i>Car Transportation</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'bike-transportation' ? ' active' : '' ?>"
-                href="<?= site_url('bike-transportation') ?>">Bike Transportation</a></li>
+                href="<?= site_url('bike-transportation') ?>"><i class="bi bi-bicycle me-2 text-primary-brand"></i>Bike Transportation</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'packing-and-moving' ? ' active' : '' ?>"
-                href="<?= site_url('packing-and-moving') ?>">Packing &amp; Moving Service</a></li>
+                href="<?= site_url('packing-and-moving') ?>"><i class="bi bi-box-seam me-2 text-primary-brand"></i>Packing &amp; Moving Service</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'loading-unloading' ? ' active' : '' ?>"
-                href="<?= site_url('loading-unloading') ?>">Loading Unloading Service</a></li>
+                href="<?= site_url('loading-unloading') ?>"><i class="bi bi-person-down me-2 text-primary-brand"></i>Loading Unloading Service</a></li>
           </ul>
         </div>
+
         <a href="<?= site_url('our-branches') ?>"
-          class="nav-link<?= $active_tab === 'locations' ? ' active' : '' ?>">Locations</a>
-        <a href="<?= site_url('blog') ?>" class="nav-link<?= $active_tab === 'blog' ? ' active' : '' ?>">Blog</a>
+          class="nav-link<?= $active_tab === 'locations' ? ' active' : '' ?>"><i class="bi bi-geo-alt me-1"></i>Network</a>
+        <a href="<?= site_url('blog') ?>" class="nav-link<?= $active_tab === 'blog' ? ' active' : '' ?>"><i class="bi bi-journal-text me-1"></i>Blog</a>
+        <a href="<?= site_url('faqs') ?>" class="nav-link<?= $segment1 === 'faqs' ? ' active' : '' ?>"><i class="bi bi-question-circle me-1"></i>FAQs</a>
         <a href="<?= site_url('contact-us') ?>"
-          class="nav-link<?= $active_tab === 'contact' ? ' active' : '' ?>">Contact Us</a>
-        <a href="<?= site_url('tracking') ?>"
-          class="nav-link<?= $active_tab === 'tracking' ? ' active' : '' ?>">Track</a>
+          class="nav-link<?= $active_tab === 'contact' ? ' active' : '' ?>"><i class="bi bi-telephone me-1"></i>Contact Us</a>
       </nav>
 
       <!-- Header Action Buttons -->
       <div class="d-flex align-items-center gap-3">
         <!-- Get a Quote Button -->
-        <a href="#" class="btn-quote d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#qteModal">
-          <i class="bi bi-file-earmark-text"></i>
-          <span>Get a Quote</span>
+        <a href="#" class="btn-quote" data-bs-toggle="modal" data-bs-target="#qteModal">
+          <span>Get a Free Quote</span>
+          <i class="bi bi-chevron-right ms-1"></i>
         </a>
 
         <!-- Hamburger for Mobile -->
@@ -191,83 +183,113 @@
 
   <!-- Full Screen Mega Menu (overlay menu when clicking hamburger) -->
   <nav class="mega-overlay" id="megaMenu" aria-label="Main navigation">
-    <button class="mega-close" id="closeMenu" aria-label="Close navigation menu">
-      <i class="bi bi-x"></i>
-    </button>
-
     <div class="mega-inner">
+      <!-- Drawer Header Row -->
+      <div class="drawer-header d-flex align-items-center justify-content-between pb-3 border-bottom">
+        <a href="<?= site_url() ?>" class="d-flex align-items-center">
+          <img src="<?= base_url() ?>assets/images/logo/logo.png" alt="<?= $company3 ?>" class="drawer-logo">
+        </a>
+        <button class="mega-close" id="closeMenu" aria-label="Close navigation menu">
+          <i class="bi bi-x-lg"></i>
+        </button>
+      </div>
 
       <!-- Navigation Accordion -->
       <div class="mobile-nav-list">
-        <div class="mobile-nav-item<?= $active_tab === 'home' ? ' active' : '' ?>">
-          <a href="<?= site_url() ?>" class="mobile-nav-link">Home</a>
+        <div class="mobile-nav-item">
+          <a href="<?= site_url() ?>" class="mobile-nav-link<?= $active_tab === 'home' ? ' active' : '' ?>">
+            <span class="d-flex align-items-center gap-2">
+              <i class="bi bi-house-door-fill text-primary-brand"></i> Home
+            </span>
+          </a>
         </div>
 
         <div class="mobile-nav-item mobile-dropdown<?= $active_tab === 'about' ? ' active' : '' ?>">
-          <button class="mobile-nav-link mobile-dropdown-toggle">
-            <span>About Us</span>
+          <button class="mobile-nav-link mobile-dropdown-toggle<?= $active_tab === 'about' ? ' active' : '' ?>">
+            <span class="d-flex align-items-center gap-2">
+              <i class="bi bi-info-circle-fill text-primary-brand"></i> About Us
+            </span>
             <i class="bi bi-chevron-down toggle-icon"></i>
           </button>
           <div class="mobile-dropdown-menu">
             <a href="<?= site_url('about-us') ?>" class="<?= $segment1 === 'about-us' ? 'active' : '' ?>">About Us</a>
-            <a href="<?= site_url('why-choose-us') ?>" class="<?= $segment1 === 'why-choose-us' ? 'active' : '' ?>">Why
-              Choose Us</a>
+            <a href="<?= site_url('why-choose-us') ?>" class="<?= $segment1 === 'why-choose-us' ? 'active' : '' ?>">Why Choose Us</a>
             <a href="<?= site_url('faqs') ?>" class="<?= $segment1 === 'faqs' ? 'active' : '' ?>">FAQ</a>
-            <a href="<?= site_url('testimonials') ?>"
-              class="<?= $segment1 === 'testimonials' ? 'active' : '' ?>">Testimonial</a>
-            <a href="<?= site_url('photo-gallery') ?>"
-              class="<?= $segment1 === 'photo-gallery' ? 'active' : '' ?>">Photo Gallery</a>
-            <a href="<?= site_url('privacy-policy') ?>"
-              class="<?= $segment1 === 'privacy-policy' ? 'active' : '' ?>">Privacy Policy</a>
-            <a href="<?= site_url('terms-and-conditions') ?>"
-              class="<?= $segment1 === 'terms-and-conditions' ? 'active' : '' ?>">Terms &amp; Conditions</a>
+            <a href="<?= site_url('testimonials') ?>" class="<?= $segment1 === 'testimonials' ? 'active' : '' ?>">Testimonials</a>
+            <a href="<?= site_url('photo-gallery') ?>" class="<?= $segment1 === 'photo-gallery' ? 'active' : '' ?>">Photo Gallery</a>
+            <a href="<?= site_url('privacy-policy') ?>" class="<?= $segment1 === 'privacy-policy' ? 'active' : '' ?>">Privacy Policy</a>
+            <a href="<?= site_url('terms-and-conditions') ?>" class="<?= $segment1 === 'terms-and-conditions' ? 'active' : '' ?>">Terms &amp; Conditions</a>
           </div>
         </div>
 
         <div class="mobile-nav-item mobile-dropdown<?= $active_tab === 'services' ? ' active' : '' ?>">
-          <button class="mobile-nav-link mobile-dropdown-toggle">
-            <span>Services</span>
+          <button class="mobile-nav-link mobile-dropdown-toggle<?= $active_tab === 'services' ? ' active' : '' ?>">
+            <span class="d-flex align-items-center gap-2">
+              <i class="bi bi-truck-flatbed text-primary-brand"></i> Services
+            </span>
             <i class="bi bi-chevron-down toggle-icon"></i>
           </button>
           <div class="mobile-dropdown-menu">
-            <a href="<?= site_url('home-relocation') ?>"
-              class="<?= $segment1 === 'home-relocation' ? 'active' : '' ?>">Home Relocation</a>
-            <a href="<?= site_url('office-relocation') ?>"
-              class="<?= $segment1 === 'office-relocation' ? 'active' : '' ?>">Office Relocation</a>
-            <a href="<?= site_url('car-transportation') ?>"
-              class="<?= $segment1 === 'car-transportation' ? 'active' : '' ?>">Car Transportation</a>
-            <a href="<?= site_url('bike-transportation') ?>"
-              class="<?= $segment1 === 'bike-transportation' ? 'active' : '' ?>">Bike Transportation</a>
-            <a href="<?= site_url('packing-and-moving') ?>"
-              class="<?= $segment1 === 'packing-and-moving' ? 'active' : '' ?>">Packing &amp; Moving Service</a>
-            <a href="<?= site_url('loading-unloading') ?>"
-              class="<?= $segment1 === 'loading-unloading' ? 'active' : '' ?>">Loading Unloading Service</a>
+            <a href="<?= site_url('home-relocation') ?>" class="<?= $segment1 === 'home-relocation' ? 'active' : '' ?>">Home Relocation</a>
+            <a href="<?= site_url('office-relocation') ?>" class="<?= $segment1 === 'office-relocation' ? 'active' : '' ?>">Office Relocation</a>
+            <a href="<?= site_url('car-transportation') ?>" class="<?= $segment1 === 'car-transportation' ? 'active' : '' ?>">Car Transportation</a>
+            <a href="<?= site_url('bike-transportation') ?>" class="<?= $segment1 === 'bike-transportation' ? 'active' : '' ?>">Bike Transportation</a>
+            <a href="<?= site_url('packing-and-moving') ?>" class="<?= $segment1 === 'packing-and-moving' ? 'active' : '' ?>">Packing &amp; Moving Service</a>
+            <a href="<?= site_url('loading-unloading') ?>" class="<?= $segment1 === 'loading-unloading' ? 'active' : '' ?>">Loading Unloading Service</a>
           </div>
         </div>
 
-        <div class="mobile-nav-item<?= $active_tab === 'locations' ? ' active' : '' ?>">
-          <a href="<?= site_url('our-branches') ?>" class="mobile-nav-link">Locations</a>
-        </div>
-        <div class="mobile-nav-item<?= $active_tab === 'blog' ? ' active' : '' ?>">
-          <a href="<?= site_url('blog') ?>" class="mobile-nav-link">Blog</a>
-        </div>
-
-        <div class="mobile-nav-item<?= $active_tab === 'contact' ? ' active' : '' ?>">
-          <a href="<?= site_url('contact-us') ?>" class="mobile-nav-link">Contact Us</a>
+        <div class="mobile-nav-item">
+          <a href="<?= site_url('our-branches') ?>" class="mobile-nav-link<?= $active_tab === 'locations' ? ' active' : '' ?>">
+            <span class="d-flex align-items-center gap-2">
+              <i class="bi bi-geo-alt-fill text-primary-brand"></i> Network
+            </span>
+          </a>
         </div>
 
-        <div class="mobile-nav-item<?= $active_tab === 'tracking' ? ' active' : '' ?>">
-          <a href="<?= site_url('tracking') ?>" class="mobile-nav-link">Track</a>
+        <div class="mobile-nav-item">
+          <a href="<?= site_url('blog') ?>" class="mobile-nav-link<?= $active_tab === 'blog' ? ' active' : '' ?>">
+            <span class="d-flex align-items-center gap-2">
+              <i class="bi bi-journal-text text-primary-brand"></i> Blog
+            </span>
+          </a>
+        </div>
+
+        <div class="mobile-nav-item">
+          <a href="<?= site_url('faqs') ?>" class="mobile-nav-link<?= $segment1 === 'faqs' ? ' active' : '' ?>">
+            <span class="d-flex align-items-center gap-2">
+              <i class="bi bi-question-circle-fill text-primary-brand"></i> FAQs
+            </span>
+          </a>
+        </div>
+
+        <div class="mobile-nav-item">
+          <a href="<?= site_url('contact-us') ?>" class="mobile-nav-link<?= $active_tab === 'contact' ? ' active' : '' ?>">
+            <span class="d-flex align-items-center gap-2">
+              <i class="bi bi-envelope-fill text-primary-brand"></i> Contact Us
+            </span>
+          </a>
+        </div>
+
+        <div class="mobile-nav-item">
+          <a href="<?= site_url('tracking') ?>" class="mobile-nav-link<?= $active_tab === 'tracking' ? ' active' : '' ?>">
+            <span class="d-flex align-items-center gap-2">
+              <i class="bi bi-box-seam-fill text-primary-brand"></i> Track Shipment
+            </span>
+          </a>
         </div>
       </div>
 
-      <!-- Secondary Links -->
-      <div class="mobile-sec-links">
-        <a href="<?= site_url('photo-gallery') ?>">Gallery</a>
-        <a href="<?= site_url('reviews') ?>">Reviews</a>
-        <a href="<?= site_url('privacy-policy') ?>">Privacy Policy</a>
-        <a href="<?= site_url('terms-and-conditions') ?>">Terms &amp; Conditions</a>
-        <a href="<?= $megaWhatsappLink ?>" target="_blank" rel="noopener">WhatsApp</a>
+      <!-- Drawer Footer & Socials -->
+      <div class="drawer-footer mt-auto pt-3 border-top">
+        <div class="mobile-sec-pills d-flex flex-wrap gap-2 mb-3">
+          <a href="<?= site_url('photo-gallery') ?>" class="drawer-pill">Gallery</a>
+          <a href="<?= site_url('privacy-policy') ?>" class="drawer-pill">Privacy</a>
+          <a href="<?= site_url('terms-and-conditions') ?>" class="drawer-pill">Terms</a>
+        </div>
+        <a href="<?= $megaWhatsappLink ?>" target="_blank" rel="noopener" class="btn-whatsapp-drawer d-flex align-items-center justify-content-center gap-2">
+          <i class="bi bi-whatsapp"></i> <span>Chat on WhatsApp</span>
+        </a>
       </div>
     </div>
   </nav>
