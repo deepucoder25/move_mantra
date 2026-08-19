@@ -3,8 +3,8 @@ class About extends MX_Controller
 {
     function index()
     {
-        $data['title'] = "About Us | " . $this->comp['company3'];
-        $data['description'] = "Learn more about " . $this->comp['company3'] . ", our <?= $experience ?> Years Legacy, infrastructure, expert team, mission, and vision in the packing and moving industry.";
+        $data['title'] = "Best Packers and Movers in India | About " . $this->comp['company3'];
+        $data['description'] = "Discover " . $this->comp['company3'] . ", India's trusted relocation company with " . $this->comp['experience'] . " years of excellence. We provide safe, affordable household packing, office shifting, and vehicle transport nationwide.";
         $data['module'] = "about";
         $data['view_file'] = "about";
         echo Modules::run('template/layout2', $data);
@@ -12,8 +12,8 @@ class About extends MX_Controller
 
     function choose()
     {
-        $data['title'] = "Why Choose Us | " . $this->comp['company3'];
-        $data['description'] = "Discover why customers trust " . $this->comp['company3'] . " for safe, reliable, and transparently priced shifting, vehicle transport, and corporate relocation services.";
+        $data['title'] = "Why Choose Us | Safe & Trusted Relocation Services | " . $this->comp['company3'];
+        $data['description'] = "Find out why over 39,850+ clients trust " . $this->comp['company3'] . " for house shifting, office moving, and car/bike transport. Transparent pricing, 100% safety, and nationwide network.";
         $data['module'] = "about";
         $data['view_file'] = "choose";
         echo Modules::run('template/layout2', $data);
@@ -21,8 +21,8 @@ class About extends MX_Controller
 
     function faqs()
     {
-        $data['title'] = "Frequently Asked Questions (FAQs) | " . $this->comp['company3'];
-        $data['description'] = "Get answers to common queries about packing and shifting charges, transit insurance, delivery timeline, tracking, and restricted items at " . $this->comp['company3'] . ".";
+        $data['title'] = "Packers and Movers FAQs | Relocation Guide | " . $this->comp['company3'];
+        $data['description'] = "Have questions about house shifting charges, packing quality, insurance, delivery timeline, or consignment tracking? Get instant answers from " . $this->comp['company3'] . " FAQs.";
         $data['module'] = "about";
         $data['view_file'] = "faqs";
         echo Modules::run('template/layout2', $data);
@@ -31,7 +31,7 @@ class About extends MX_Controller
     function testimonials()
     {
         $data['title'] = "Customer Reviews & Testimonials | " . $this->comp['company3'];
-        $data['description'] = "Read genuine client testimonials and feedback about " . $this->comp['company3'] . " home shifting, vehicle transportation, and office relocation services.";
+        $data['description'] = "Read real customer reviews and testimonials about " . $this->comp['company3'] . ". See how our professional packing and moving team delivers 5-star household and vehicle shifting experiences.";
         $data['module'] = "about";
         $data['view_file'] = "testimonials";
         echo Modules::run('template/layout2', $data);
@@ -46,7 +46,7 @@ class About extends MX_Controller
     function privacy()
     {
         $data['title'] = "Privacy Policy | " . $this->comp['company3'];
-        $data['description'] = "How " . $this->comp['company3'] . " handles and protects your personal data during your relocation.";
+        $data['description'] = "Read the official Privacy Policy of " . $this->comp['company3'] . ". Learn how we safeguard your personal details and booking information with strict data privacy protocols.";
         $data['module'] = "about";
         $data['view_file'] = "privacy";
         echo Modules::run('template/layout2', $data);
@@ -55,7 +55,7 @@ class About extends MX_Controller
     function terms()
     {
         $data['title'] = "Terms & Conditions | " . $this->comp['company3'];
-        $data['description'] = "The terms and conditions governing our relocation services at " . $this->comp['company3'] . ".";
+        $data['description'] = "Review the Terms and Conditions of " . $this->comp['company3'] . ". Understand our service guidelines, payment terms, insurance coverage policies, and transit agreements.";
         $data['module'] = "about";
         $data['view_file'] = "terms";
         echo Modules::run('template/layout2', $data);

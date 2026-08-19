@@ -79,8 +79,8 @@ class Blog extends MX_Controller {
         $data['total'] = $total_rows;
         $data['recent_posts'] = array_slice($all_blogs, 0, 5);
 
-        $data['title'] = "Packing & Moving Tips, Guides & News | " . $this->comp['company3'];
-        $data['description'] = "Read expert relocation advice, house shifting tips, vehicle moving guides, and industry updates on the official blog of " . $this->comp['company3'] . ".";
+        $data['title'] = "Packers & Movers Blog | Relocation Tips & Moving Guides | " . $this->comp['company3'];
+        $data['description'] = "Read expert house shifting tips, packing guides, car & bike transport advice, and relocation checklists on the official blog of " . $this->comp['company3'] . ". Stay informed and plan a stress-free move.";
         $data['module'] = "blog";
         $data['view_file'] = "blog"; 
 
@@ -114,8 +114,9 @@ class Blog extends MX_Controller {
             $data['query'] = [$selected_blog];
             $data['recent_posts'] = array_slice($all_blogs, 0, 5);
             
-            $data['title'] = ucfirst($selected_blog->title) . " | " . $this->comp['company3'];
-            $data['description'] = word_limiter(strip_tags($selected_blog->description ?? ''), 150);
+            $data['title'] = ucfirst($selected_blog->title) . " | " . $this->comp['company3'] . " Blog";
+            $blog_desc = word_limiter(strip_tags($selected_blog->description ?? ''), 150);
+            $data['description'] = !empty($blog_desc) ? $blog_desc : "Read " . $selected_blog->title . " on " . $this->comp['company3'] . " blog. Get top relocation tips and packing advice for safe house shifting.";
             
             $image_file = $selected_blog->image ?? '';
             if ($image_file && file_exists(FCPATH . 'assets/uploads/blog/' . $image_file)) {

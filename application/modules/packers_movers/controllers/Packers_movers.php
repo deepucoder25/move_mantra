@@ -4,16 +4,16 @@ class Packers_movers extends MX_Controller
 
     function index()
     {
-        $data['title'] = "All India Service " . $this->comp['company3'];
-        $data['description'] = $this->comp['company3'] . " is best packers and movers service provider.";
+        $data['title'] = "All India Packers and Movers Services | Nationwide Relocation | " . $this->comp['company3'];
+        $data['description'] = $this->comp['company3'] . " is India's premier packing and moving company. We offer seamless household shifting, office relocation, car shipping, and bike transport in all cities across India.";
         $data['module'] = "packers_movers";
         $data['view_file'] = "states";
         echo Modules::run('template/layout2', $data);
     }
     function state()
     {
-        $data['title'] = "All India Service " . $this->comp['company3'];
-        $data['description'] = $this->comp['company3'] . " is best packers and movers service provider.";
+        $data['title'] = "Pan India Packers and Movers Network | All States Services | " . $this->comp['company3'];
+        $data['description'] = "Find trusted packers and movers in any state across India. " . $this->comp['company3'] . " provides reliable home shifting, vehicle carrier, and warehouse storage solutions nationwide.";
         $data['module'] = "packers_movers";
         $data['view_file'] = "states";
         echo Modules::run('template/layout2', $data);
@@ -27,9 +27,9 @@ class Packers_movers extends MX_Controller
         $state = ucwords(str_replace("-", " ", $state));
         $data = array(
             "state" => $state,
-            "title" => $this->comp['company3'] . " in $state",
-            "description" => $this->comp['company3'] . " in $state",
-            "keywords" => "$state " . $this->comp['company3'] . " in $state",
+            "title" => "Best Packers and Movers in $state | House Shifting Services | " . $this->comp['company3'],
+            "description" => "Hire top-rated packers and movers in $state. " . $this->comp['company3'] . " offers 100% safe household shifting, office moving, bike and car transport with live tracking in $state.",
+            "keywords" => "packers and movers in $state, house shifting in $state, movers Packers $state, relocation services $state",
             "module" => "packers_movers",
             "view_file" => "city_list",
         );

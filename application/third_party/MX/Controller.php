@@ -59,8 +59,8 @@ class MX_Controller
         $this->comp['replyToMail'] = 'support@mycompany.com';
         $this->comp['mail'] = 'support@mycompany.com';    
         $this->comp['mailhtml'] = "mailto:support@mycompany.com";
-        $this->comp['company3'] = 'MyCompany';
-        $this->comp['companydomain'] = 'mycompany.com';
+        $this->comp['company3'] = 'MoveMantra Packers & Movers';
+        $this->comp['companydomain'] = 'movemantrapackers.com';
 
         $this->comp['facebookhtml'] = "";
         $this->comp['youtubehtml'] = "";
@@ -75,7 +75,7 @@ class MX_Controller
         $this->comp['addressRegion'] = "Mumbai";
         $this->comp['postalCode'] = "421302";
         $this->comp['companystate'] = "Maharashtra";
-        $this->comp['themeColor'] = "#0a4ebd";
+        $this->comp['themeColor'] = "#0284C7";
 
         $this->comp['experience'] = "40+";
         $this->comp['startYear'] = "1986";

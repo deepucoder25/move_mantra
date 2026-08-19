@@ -5,11 +5,16 @@ html, body {
 }
 
 :root {
-    --dark-navy: #030f26;
-    --primary-blue: #0a4ebd;
-    --accent-gold: #ffb300;
+    --primary-blue: #82EEFD;
+    --secondry-color: #0284C7;
+    --dark-navy: #0D47A1;
     --text-dark: #20344d;
     --white: #ffffff;
+    /* Gradient Variables */
+    --gradient-primary: linear-gradient(180deg, var(--primary-blue) 0%, #6366F1 100%);
+    --gradient-secondary: linear-gradient(180deg, var(--primary-blue) 0%, var(--secondry-color) 100%);
+    --gradient-tertiary: linear-gradient(180deg, var(--primary-blue) 0%, var(--dark-navy) 100%);
+    --gradient-dark-blue: linear-gradient(180deg, var(--primary-blue) 0%, #0D47A1 100%);
 }
 
 /* Top Slim Bar */

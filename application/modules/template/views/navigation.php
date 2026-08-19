@@ -11,7 +11,7 @@
   $active_tab = '';
   if (empty($segment1) || $segment1 === 'home' || $class === 'home') {
     $active_tab = 'home';
-  } elseif ($class === 'about' || in_array($segment1, ['about-us', 'why-choose-us', 'faqs', 'testimonials'])) {
+  } elseif ($class === 'about' || $class === 'gallery' || in_array($segment1, ['about-us', 'why-choose-us', 'faqs', 'testimonials', 'photo-gallery', 'privacy-policy', 'terms-and-conditions'])) {
     $active_tab = 'about';
   } elseif ($class === 'services' || in_array($segment1, ['our-services', 'home-shifting', 'office-relocation', 'car-transportation', 'bike-transportation', 'warehouse-and-storage', 'domestic-relocation', 'international-shifting', 'corporate-shifting', 'intercity-shifting', 'local-shifting', 'logistic-services', 'pet-relocation', 'home-relocation', 'storage-services', 'car-transportation-service'])) {
     $active_tab = 'services';
@@ -135,6 +135,12 @@
                 href="<?= site_url('faqs') ?>">FAQ</a></li>
             <li><a class="dropdown-item<?= $segment1 === 'testimonials' ? ' active' : '' ?>"
                 href="<?= site_url('testimonials') ?>">Testimonial</a></li>
+            <li><a class="dropdown-item<?= $segment1 === 'photo-gallery' ? ' active' : '' ?>"
+                href="<?= site_url('photo-gallery') ?>">Photo Gallery</a></li>
+            <li><a class="dropdown-item<?= $segment1 === 'privacy-policy' ? ' active' : '' ?>"
+                href="<?= site_url('privacy-policy') ?>">Privacy Policy</a></li>
+            <li><a class="dropdown-item<?= $segment1 === 'terms-and-conditions' ? ' active' : '' ?>"
+                href="<?= site_url('terms-and-conditions') ?>">Terms &amp; Conditions</a></li>
           </ul>
         </div>
         <div class="nav-item dropdown">
@@ -209,6 +215,12 @@
             <a href="<?= site_url('faqs') ?>" class="<?= $segment1 === 'faqs' ? 'active' : '' ?>">FAQ</a>
             <a href="<?= site_url('testimonials') ?>"
               class="<?= $segment1 === 'testimonials' ? 'active' : '' ?>">Testimonial</a>
+            <a href="<?= site_url('photo-gallery') ?>"
+              class="<?= $segment1 === 'photo-gallery' ? 'active' : '' ?>">Photo Gallery</a>
+            <a href="<?= site_url('privacy-policy') ?>"
+              class="<?= $segment1 === 'privacy-policy' ? 'active' : '' ?>">Privacy Policy</a>
+            <a href="<?= site_url('terms-and-conditions') ?>"
+              class="<?= $segment1 === 'terms-and-conditions' ? 'active' : '' ?>">Terms &amp; Conditions</a>
           </div>
         </div>
 
