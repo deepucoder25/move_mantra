@@ -51,14 +51,14 @@ class MX_Controller
         $this->load = clone load_class('Loader');
         $this->load->initialize($this);
 
-        $this->comp['phone'] = '+91 0000000000';
-        $this->comp['phonehtml'] = 'tel:+910000000000';
-        $this->comp['phone1'] = '+91 0000000000';
-        $this->comp['phonehtml1'] = 'tel:+910000000000';
+        $this->comp['phone'] = '+91 9734943443';
+        $this->comp['phonehtml'] = 'tel:+919734943443';
+        $this->comp['phone1'] = '+91 7033343290';
+        $this->comp['phonehtml1'] = 'tel:+917033343290';
         $this->comp['supportmail'] = 'support@mycompany.com';
         $this->comp['replyToMail'] = 'support@mycompany.com';
-        $this->comp['mail'] = 'support@mycompany.com';    
-        $this->comp['mailhtml'] = "mailto:support@mycompany.com";
+        $this->comp['mail'] = 'movemantrapackers@gmail.com';    
+        $this->comp['mailhtml'] = "mailto:movemantrapackers@gmail.com";
         $this->comp['company3'] = 'MoveMantra Packers & Movers';
         $this->comp['companydomain'] = 'movemantrapackers.com';
 
@@ -67,23 +67,27 @@ class MX_Controller
         $this->comp['instagramhtml'] = "";
         $this->comp['twitterhtml'] = "";
         $this->comp['linkedinhtml'] = "";
-        $this->comp['whatsapphtml'] = "https://wa.me/910000000000";
+        $this->comp['whatsapphtml'] = "https://wa.me/919734943443";
+        $this->comp['whatsapphtml1'] = "https://wa.me/917033343290";
 
-        $this->comp['address'] = "Shop No.17, Building No.2, Deeplaxmi Rajaram Residency, Kalher, Bhiwandi, Mumbai, Pin Code- 421302";
-        $this->comp['address1'] = "Shop No.17, Building No.2, Deeplaxmi Rajaram Residency";
-        $this->comp['address2'] = "Kalher, Bhiwandi, Mumbai, Pin Code- 421302";
-        $this->comp['addressRegion'] = "Mumbai";
-        $this->comp['postalCode'] = "421302";
-        $this->comp['companystate'] = "Maharashtra";
+        $this->comp['address'] = "2 NO.JYOTINAGAR COLONY,WARD NO.4,SILIGURI,DARJEELING-734005";
+        $this->comp['address1'] = "WARD NO.4,SILIGURI,DARJEELING";
+        $this->comp['address2'] = "SILIGURI,DARJEELING-734005";
+        $this->comp['addressRegion'] = "Siliguri";
+        $this->comp['postalCode'] = "734005";
+        $this->comp['companystate'] = "West Bengal";
         $this->comp['themeColor'] = "#0284C7";
 
-        $this->comp['experience'] = "40+";
-        $this->comp['startYear'] = "1986";
+        $this->comp['experience'] = "10+";
+        $this->comp['startYear'] = "2016";
 
-        $this->comp['happyClients'] = "39,850+";
-        $this->comp['yearsExperience'] = "40+";
+        $this->comp['happyClients'] = "25K+";
+        $this->comp['yearsExperience'] = "10+";
         $this->comp['secureShifting'] = "100%";
         $this->comp['statesCovered'] = "20+";
+        $this->comp['citiesCovered'] = "500+";
+        $this->comp['proMovers'] = "200+";
+        $this->comp['satisfactionRate'] = "99%";
 
         $this->comp['sku'] = "PM28957";
         $this->comp['mpn'] = "SPM28957";
