@@ -1,126 +1,128 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); 
 
-// Fetch site-wide dynamic company settings (loaded from MX_Controller or system context)
-$companyName = isset($company3) ? $company3 : 'MyCompany';
-$companyPhone = isset($phone) ? $phone : '+91 ';
-$companyPhoneHtml = isset($phonehtml) ? $phonehtml : 'tel:+';
-$companyEmail = isset($mail) ? $mail : '';
-$companyEmailHtml = isset($mailhtml) ? $mailhtml : '';
-$companyExperience = isset($experience) ? $experience : '';
-$companyLocation = isset($addressRegion) ? $addressRegion : '';
-$companyState = isset($companystate) ? $companystate : '';
+$companyName = !empty($company3) ? $company3 : 'MoveMantra Packers and Movers';
+$expYears = !empty($yearsExperience) ? $yearsExperience : (!empty($experience) ? $experience : '10+');
 ?>
 
-<section class="about-section py-5">
-    <!-- Background Decor Grid Patterns -->
-    <div class="about-decor decor-top-right"></div>
-    <div class="about-decor decor-bottom-left"></div>
+<!-- ABOUT US WIDGET SECTION -->
+<section class="about-widget-section py-5 position-relative overflow-hidden">
+  <div class="container position-relative z-2">
+    <div class="row align-items-center g-4 g-lg-5">
 
-    <div class="container position-relative about-z2">
-        <div class="row align-items-center g-4 g-lg-5">
-            
-            <!-- Left Side: Image Showcase -->
-            <div class="col-lg-6 col-12">
-                <div class="about-image-wrap position-relative">
-                    <div class="about-img-bg-shape"></div>
-                    <img src="<?= base_url('assets/images/about/about-showcase.webp') ?>" 
-                         alt="Reliable Packers and Movers Service - <?= htmlspecialchars($companyName) ?>" 
-                         class="about-img img-fluid rounded-4 shadow-lg position-relative about-z2" 
-                         loading="lazy">
-                    
-                    <!-- Floating Experience Badge -->
-                    <div class="about-experience-badge d-flex align-items-center shadow-lg">
-                        <div class="exp-number"><?= htmlspecialchars($companyExperience) ?></div>
-                        <div class="exp-text">
-                            <span class="d-block text-uppercase font-weight-bold">Years of</span>
-                            <span class="d-block text-uppercase">Trusted service</span>
-                        </div>
-                    </div>
-                </div>
+      <!-- Left Side Graphic Column -->
+      <div class="col-lg-6 col-12">
+        <div class="about-graphic-container position-relative text-center">
+          
+          <!-- Background Soft Cyan Circle -->
+          <div class="about-bg-circle position-absolute rounded-circle"></div>
+
+          <!-- World Map SVG Background -->
+          <div class="about-map-bg position-absolute w-100 h-100 top-0 start-0 pointer-events-none">
+            <svg width="100%" height="100%" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg" opacity="0.3">
+              <!-- World Map Shape -->
+              <path d="M120 150 C140 120, 180 130, 200 160 C220 190, 250 170, 270 140 C290 110, 340 120, 360 150 C380 180, 420 160, 450 190 C480 220, 520 200, 540 240 L500 280 L100 280 Z" fill="#7dd3fc"/>
+              <circle cx="90" cy="90" r="3" fill="#0284c7"/>
+              <circle cx="110" cy="70" r="2.5" fill="#0284c7"/>
+              <circle cx="130" cy="110" r="3" fill="#0284c7"/>
+              <circle cx="70" cy="110" r="2" fill="#0284c7"/>
+              <circle cx="90" cy="130" r="2.5" fill="#0284c7"/>
+            </svg>
+          </div>
+
+          <!-- Delivery Mover Image -->
+          <img src="<?= base_url('assets/images/home_modules/home_about.jpg') ?>" 
+               alt="<?= htmlspecialchars($companyName) ?> - Professional Mover" 
+               class="about-showcase-img img-fluid position-relative z-2" 
+               loading="lazy">
+
+          <!-- Wavy Floating Experience Badge -->
+          <div class="about-exp-badge position-absolute bg-white rounded-5 p-3 shadow-lg d-flex flex-column align-items-center justify-content-center z-3">
+            <div class="fw-extrabold text-dark-navy lh-1 fs-1 mb-1"><?= htmlspecialchars($expYears) ?></div>
+            <div class="extra-small fw-bold text-dark-navy text-center lh-xs text-nowrap">
+              Years of<br>Experience
             </div>
-
-            <!-- Right Side: Content Details -->
-            <div class="col-lg-6 col-12">
-                <div class="about-content">
-                    
-                    <!-- Subheading Badge -->
-                    <div class="about-badge-wrap d-flex align-items-center mb-3">
-                        <span class="about-badge-line"></span>
-                        <span class="about-pill-badge text-uppercase">Who We Are</span>
-                    </div>
-
-                    <!-- SEO-Friendly Heading -->
-                    <h2 class="about-title mb-3">
-                        Reliable Shifting &amp; Relocation Services by <span class="text-primary-blue"><?= htmlspecialchars($companyName) ?></span>
-                    </h2>
-
-                    <!-- Descriptive Paragraphs -->
-                    <p class="about-desc-lead mb-3">
-                        Moving to a new home, office, or transporting vehicles can feel overwhelming. At <strong><?= htmlspecialchars($companyName) ?></strong>, we are committed to making your relocation journey smooth, secure, and stress-free. Whether shifting locally within <?= htmlspecialchars($companyLocation) ?> or relocating across <?= htmlspecialchars($companyState) ?> and all over India, our team handles every aspect of your move with extreme care and precision.
-                    </p>
-                    
-                    <p class="about-desc mb-4">
-                        With over <strong><?= htmlspecialchars($companyExperience) ?> years</strong> of professional experience, we have established ourselves as one of India's most trusted packing and moving brands. We use industry-standard packaging materials, modern cargo carriers, and structured loading systems to ensure all your precious goods and vehicles reach their destination safely, on time, and damage-free.
-                    </p>
-
-                    <!-- Features List Grid -->
-                    <div class="row g-3 mb-4">
-                        <div class="col-md-6 col-12">
-                            <div class="about-feature-item d-flex align-items-center">
-                                <div class="feature-icon-circle mr-3">
-                                    <i class="bi bi-shield-check"></i>
-                                </div>
-                                <span class="feature-text">Fully Insured Shifting</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <div class="about-feature-item d-flex align-items-center">
-                                <div class="feature-icon-circle mr-3">
-                                    <i class="bi bi-truck"></i>
-                                </div>
-                                <span class="feature-text">Modern GPS Fleet</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <div class="about-feature-item d-flex align-items-center">
-                                <div class="feature-icon-circle mr-3">
-                                    <i class="bi bi-person-check"></i>
-                                </div>
-                                <span class="feature-text">Trained Packing Crew</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-12">
-                            <div class="about-feature-item d-flex align-items-center">
-                                <div class="feature-icon-circle mr-3">
-                                    <i class="bi bi-clock-history"></i>
-                                </div>
-                                <span class="feature-text">On-Time Safe Delivery</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Call To Actions -->
-                    <div class="d-flex flex-wrap align-items-center gap-3">
-                        <a href="<?= site_url('about-us') ?>" class="btn btn-primary-blue shadow-sm d-flex align-items-center">
-                            Read More About Us
-                            <i class="bi bi-arrow-right-short ml-2 font-weight-bold about-cta-icon"></i>
-                        </a>
-                        <div class="about-contact-wrap d-flex align-items-center ml-md-4 mt-2 mt-md-0">
-                            <div class="about-contact-icon d-flex align-items-center justify-content-center">
-                                <i class="bi bi-telephone-fill"></i>
-                            </div>
-                            <div class="about-contact-details ml-2">
-                                <span class="d-block contact-label text-muted">Talk to an Expert</span>
-                                <a href="<?= htmlspecialchars($companyPhoneHtml) ?>" class="contact-number font-weight-bold text-decoration-none">
-                                    <?= htmlspecialchars($companyPhone) ?>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+          </div>
 
         </div>
+      </div>
+
+      <!-- Right Side Content Details -->
+      <div class="col-lg-6 col-12">
+        <div class="about-content-wrap">
+          
+          <!-- Subheading Eyebrow Tag -->
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="header-line left-line"></span>
+            <span class="text-uppercase text-secondry section-tag-title">ABOUT US</span>
+            <span class="header-line right-line"></span>
+          </div>
+
+          <!-- Main Title Heading -->
+          <h2 class="fw-extrabold text-dark-navy fs-1 mb-3">
+            We Make Moving Simple, <span class="text-secondry">Safe &amp; Stress-Free!</span>
+          </h2>
+
+          <!-- Description Paragraph -->
+          <p class="text-secondary fs-6 mb-4 lh-base">
+            <strong><?= htmlspecialchars($companyName) ?></strong> is a trusted name in the relocation industry, providing high-quality packing and moving services across India. Our expert team ensures your belongings are packed with care and delivered safely to your new destination.
+          </p>
+
+          <!-- 4 Feature Pills / Cards Row -->
+          <div class="row g-2 mb-4">
+            <!-- Feature 1 -->
+            <div class="col-6 col-sm-3">
+              <div class="about-feature-card bg-white p-2 px-2.5 rounded-4 border shadow-sm d-flex align-items-center gap-2 h-100">
+                <div class="stat-badge-icon rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width:36px; height:36px;">
+                  <i class="bi bi-people-fill fs-6"></i>
+                </div>
+                <div class="extra-small fw-bold text-dark-navy lh-sm">
+                  Trained &amp;<br>Experienced Team
+                </div>
+              </div>
+            </div>
+            <!-- Feature 2 -->
+            <div class="col-6 col-sm-3">
+              <div class="about-feature-card bg-white p-2 px-2.5 rounded-4 border shadow-sm d-flex align-items-center gap-2 h-100">
+                <div class="stat-badge-icon rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width:36px; height:36px;">
+                  <i class="bi bi-currency-rupee fs-6"></i>
+                </div>
+                <div class="extra-small fw-bold text-dark-navy lh-sm">
+                  Affordable<br>Pricing
+                </div>
+              </div>
+            </div>
+            <!-- Feature 3 -->
+            <div class="col-6 col-sm-3">
+              <div class="about-feature-card bg-white p-2 px-2.5 rounded-4 border shadow-sm d-flex align-items-center gap-2 h-100">
+                <div class="stat-badge-icon rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width:36px; height:36px;">
+                  <i class="bi bi-geo-alt-fill fs-6"></i>
+                </div>
+                <div class="extra-small fw-bold text-dark-navy lh-sm">
+                  Pan India<br>Services
+                </div>
+              </div>
+            </div>
+            <!-- Feature 4 -->
+            <div class="col-6 col-sm-3">
+              <div class="about-feature-card bg-white p-2 px-2.5 rounded-4 border shadow-sm d-flex align-items-center gap-2 h-100">
+                <div class="stat-badge-icon rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width:36px; height:36px;">
+                  <i class="bi bi-clock-history fs-6"></i>
+                </div>
+                <div class="extra-small fw-bold text-dark-navy lh-sm">
+                  On-Time<br>Delivery
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Button -->
+          <a href="<?= site_url('about-us') ?>" class="btn btn-hero-primary rounded-pill px-4 py-3 fw-bold d-inline-flex align-items-center gap-2 shadow-sm text-decoration-none">
+            Know More About Us <i class="bi bi-arrow-right fs-6"></i>
+          </a>
+
+        </div>
+      </div>
+
     </div>
+  </div>
 </section>
