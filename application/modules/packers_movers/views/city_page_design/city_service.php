@@ -2,7 +2,7 @@
 
 
 <div class="container">
-<div class="row g-4 mt-5 mb-4">
+<div class="row mt-5 mb-4">
     <!-- Home Shifting -->
     <div class="col-md-6 col-lg-3 d-flex">
         <div class="pm-city-srv-card w-100 d-flex flex-column">

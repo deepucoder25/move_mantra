@@ -329,6 +329,32 @@
 }
 
 @media (max-width: 575px) {
+    .hero-eyebrow-badge {
+        padding: 4px 12px !important;
+        font-size: 11px !important;
+    }
+
+    .hero-title {
+        font-size: 22px !important;
+        line-height: 1.3 !important;
+    }
+
+    .hero-lead {
+        font-size: 13px !important;
+        line-height: 1.5 !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-trust-pills .badge-pill {
+        font-size: 11px !important;
+        padding: 4px 10px !important;
+    }
+
+    .google-rating-badge {
+        font-size: 11px !important;
+        padding: 5px 12px !important;
+    }
+
     .hero-cta-buttons {
         flex-wrap: nowrap !important;
     }
@@ -337,15 +363,75 @@
     .btn-hero-outline {
         flex: 1 1 50%;
         width: auto !important;
-        padding: 10px 12px !important;
-        font-size: 13px !important;
+        padding: 10px 10px !important;
+        font-size: 12.5px !important;
         white-space: nowrap !important;
         justify-content: center;
     }
 
     .btn-circle-icon {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
         font-size: 10px;
+    }
+}
+
+/* --- City Slider Breadcrumb Navigation Styling --- */
+.pm-city-slider-nav {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    padding: 6px 20px !important;
+    background: rgba(255, 255, 255, 0.45) !important;
+    backdrop-filter: blur(14px) !important;
+    -webkit-backdrop-filter: blur(14px) !important;
+    border-radius: 50px !important;
+    border: 1px solid rgba(255, 255, 255, 0.65) !important;
+    margin-bottom: 12px !important;
+    flex-wrap: wrap !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05), inset 0 1px 1px rgba(255, 255, 255, 0.5) !important;
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+.pm-city-slider-nav a {
+    color: #0f172a !important;
+    text-decoration: none !important;
+    transition: color 0.25s ease !important;
+    font-weight: 600 !important;
+}
+
+.pm-city-slider-nav a:hover {
+    color: var(--secondry-color, #0284C7) !important;
+}
+
+.pm-city-slider-nav .bc-sep {
+    color: var(--secondry-color, #0284C7) !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    margin: 0 2px !important;
+    opacity: 0.85 !important;
+}
+
+.pm-city-slider-nav .bc,
+.pm-city-slider-nav a.bc {
+    color: var(--dark-navy, #0D47A1) !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+}
+
+.pm-city-slider-nav .bc-current {
+    color: #d97706 !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.2px !important;
+}
+
+@media (max-width: 575px) {
+    .pm-city-slider-nav {
+        font-size: 12px !important;
+        padding: 5px 14px !important;
+        gap: 6px !important;
     }
 }

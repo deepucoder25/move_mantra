@@ -11,7 +11,8 @@ foreach ($cities as $ct) {
 if (!empty($lat) && !empty($lon)) { ?>
     <iframe
         width="100%"
-        height="400"
+        height="100%"
+        style="min-height: 360px; border: 0;"
         class="pm-city-map-iframe"
         loading="lazy"
         allowfullscreen
