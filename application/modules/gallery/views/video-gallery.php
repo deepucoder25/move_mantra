@@ -4,7 +4,7 @@
 <?php 
 $this->load->view('about/dynamic_breadcrumbs', [
     'bc_current' => 'Video Gallery',
-    'bc_h1' => 'Video Gallery',
+    'bc_h1' => 'Live Shifting & Packing Video Gallery',
     'bc_desc' => 'Watch live video demonstrations of our zero-damage packing techniques, heavy furniture handling, vehicle transport & shifting operations.'
 ]); 
 ?>

@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Bike Transportation',
-    'bc_desc' => "Bike Transportation ",
+    'bc_h1' => 'Two-Wheeler & Bike Transportation Services',
+    'bc_desc' => 'Secure, damage-free bike shifting with specialized bubble wrapping, wooden crating, and reliable doorstep delivery nationwide.',
     'breadcrumbs' => [
         ['name' => 'Bike Transportation']
     ]

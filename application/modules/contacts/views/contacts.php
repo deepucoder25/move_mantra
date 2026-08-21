@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Contact Us',
-    'bc_desc' => 'Contact Us',
+    'bc_h1' => 'Contact MoveMantra Packers & Movers',
+    'bc_desc' => 'Get in touch with our 24/7 customer support team for instant shifting quotes, branch location inquiries, or booking assistance.',
     'breadcrumbs' => [
         ['name' => 'Contact Us']
     ]

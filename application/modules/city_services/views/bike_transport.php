@@ -3,10 +3,12 @@
 <!-- Breadcrumbs Section -->
 <?php 
 $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_current' => '',
-    'bc_title_white' => 'Bike Transportation in',
-    'bc_title_orange' => '',
-    'bc_desc' => ''
+    'bc_h1' => 'Bike & Two-Wheeler Transportation in ' . $city,
+    'bc_desc' => 'Secure bike parcel & transport services in ' . $city . ' with bubble wrapping, wooden crating, and fast doorstep delivery nationwide.',
+    'breadcrumbs' => [
+        ['name' => 'Services', 'url' => site_url('our-services')],
+        ['name' => 'Bike Transportation in ' . $city]
+    ]
 ]); 
 ?>
 

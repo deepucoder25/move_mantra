@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Privacy Policy',
-    'bc_desc' => "Privacy Policy",
+    'bc_h1' => 'Privacy Policy & Data Security',
+    'bc_desc' => 'Learn how MoveMantra Packers and Movers protects your personal information, booking details, and privacy with 100% data confidentiality.',
     'breadcrumbs' => [
         ['name' => 'Privacy Policy']
     ]

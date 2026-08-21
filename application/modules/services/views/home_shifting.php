@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Home Relocation',
-    'bc_desc' => 'Home Relocation Services',
+    'bc_h1' => 'Household Shifting & Home Relocation Services',
+    'bc_desc' => 'Professional, stress-free household shifting services with multi-layer protective packing, trained movers, and safe GPS-tracked doorstep transit across India.',
     'breadcrumbs' => [
         ['name' => 'Home Relocation']
     ]

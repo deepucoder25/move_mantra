@@ -1,8 +1,8 @@
 <main class="main">
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Our Reviews',
-    'bc_desc' => 'Read what our customers have to say',
+    'bc_h1' => 'Verified Customer Reviews & Ratings',
+    'bc_desc' => 'Explore authentic reviews and ratings from families and businesses who booked MoveMantra Packers and Movers for home shifting and vehicle relocation.',
     'breadcrumbs' => [
         ['name' => 'Reviews']
     ]

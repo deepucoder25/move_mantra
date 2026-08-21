@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Loading and Unloading Services',
-    'bc_desc' => 'Loading and Unloading Services',
+    'bc_h1' => 'Safe Loading & Unloading Services',
+    'bc_desc' => 'Trained handling crew equipped with modern ramps, lifters, and safety gear for damage-free loading and unloading of heavy furniture and fragile goods.',
     'breadcrumbs' => [
         ['name' => 'Loading and Unloading']
     ]

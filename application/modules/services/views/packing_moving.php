@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Packing and Moving Services',
-    'bc_desc' => 'Packing and Moving Services',
+    'bc_h1' => 'Premium Packing & Unpacking Services',
+    'bc_desc' => 'High-grade 5-layer protective packing materials, sturdy corrugated boxes, bubble wrap, and expert unpacking solutions for 100% item safety.',
     'breadcrumbs' => [
         ['name' => 'Packing and Moving']
     ]

@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Testimonials',
-    'bc_desc' => "Testimonials $company3",
+    'bc_h1' => 'Customer Reviews & Shifting Testimonials',
+    'bc_desc' => 'Read real stories and feedback from delighted home owners, corporate clients, and vehicle owners who experienced hassle-free shifting with MoveMantra.',
     'breadcrumbs' => [
         ['name' => 'Testimonials']
     ]

@@ -51,26 +51,28 @@ $schema_json = [
 <!-- Breadcrumbs Section -->
 <section class="dynamic-bc-section">
     <div class="container">
-        <nav class="dyn-bc-nav" aria-label="breadcrumb">
-            <a href="<?= site_url() ?>">Home</a>
-            <?php if (isset($breadcrumbs) && is_array($breadcrumbs) && !empty($breadcrumbs)): ?>
-                <?php foreach ($breadcrumbs as $crumb): ?>
+        <div class="dyn-bc-glass-card">
+            <nav class="dyn-bc-nav" aria-label="breadcrumb">
+                <a href="<?= site_url() ?>">Home</a>
+                <?php if (isset($breadcrumbs) && is_array($breadcrumbs) && !empty($breadcrumbs)): ?>
+                    <?php foreach ($breadcrumbs as $crumb): ?>
+                        <span class="dyn-bc-sep">›</span>
+                        <?php if (isset($crumb['url']) && !empty($crumb['url']) && $crumb['url'] !== 'javascript:void(0)'): ?>
+                            <a href="<?= $crumb['url'] ?>"><?= isset($crumb['name']) ? $crumb['name'] : $crumb['title'] ?></a>
+                        <?php else: ?>
+                            <span
+                                class="dyn-bc-current"><?= isset($crumb['name']) ? $crumb['name'] : (isset($crumb['title']) ? $crumb['title'] : '') ?></span>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php else: ?>
                     <span class="dyn-bc-sep">›</span>
-                    <?php if (isset($crumb['url']) && !empty($crumb['url']) && $crumb['url'] !== 'javascript:void(0)'): ?>
-                        <a href="<?= $crumb['url'] ?>"><?= isset($crumb['name']) ? $crumb['name'] : $crumb['title'] ?></a>
-                    <?php else: ?>
-                        <span
-                            class="dyn-bc-current"><?= isset($crumb['name']) ? $crumb['name'] : (isset($crumb['title']) ? $crumb['title'] : '') ?></span>
-                    <?php endif; ?>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <span class="dyn-bc-sep">›</span>
-                <span class="dyn-bc-current"><?= isset($bc_current) ? $bc_current : '' ?></span>
+                    <span class="dyn-bc-current"><?= isset($bc_current) ? $bc_current : '' ?></span>
+                <?php endif; ?>
+            </nav>
+            <h1><?= isset($bc_h1) ? $bc_h1 : '' ?></h1>
+            <?php if (isset($bc_desc) && !empty($bc_desc)): ?>
+                <p class="dyn-bc-desc"><?= $bc_desc ?></p>
             <?php endif; ?>
-        </nav>
-        <h1><?= isset($bc_h1) ? $bc_h1 : '' ?></h1>
-        <?php if (isset($bc_desc) && !empty($bc_desc)): ?>
-            <p class="dyn-bc-desc"><?= $bc_desc ?></p>
-        <?php endif; ?>
+        </div>
     </div>
 </section>

@@ -1,7 +1,7 @@
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Our Branches',
-    'bc_desc' => '',
+    'bc_h1' => 'Our Pan-India Service Network & Branches',
+    'bc_desc' => 'Explore our nationwide network of verified packers and movers branches providing local & long-distance shifting services across all states in India.',
     'breadcrumbs' => [
         ['name' => 'Our Branches']
     ]

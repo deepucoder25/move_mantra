@@ -6,8 +6,8 @@ $state = ucwords($state);
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Packers and Movers in ' . ucwords($state),
-    'bc_desc' => '',
+    'bc_h1' => 'Packers and Movers Services in ' . ucwords($state),
+    'bc_desc' => 'Select your city in ' . ucwords($state) . ' to get instant shifting quotes, verified local movers, and professional packing services.',
     'breadcrumbs' => [
         ['name' => 'Our Branches', 'url' => site_url('our-branches')],
         ['name' => ucwords($state)],

@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Why Choose Us',
-    'bc_desc' => "Why Choose $company3",
+    'bc_h1' => 'Why Choose MoveMantra Packers & Movers',
+    'bc_desc' => 'Discover why thousands of families and businesses trust MoveMantra for safe, affordable, transparent, and hassle-free relocation services across India.',
     'breadcrumbs' => [
         ['name' => 'Why Choose Us']
     ]

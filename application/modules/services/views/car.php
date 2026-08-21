@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Car Transportation',
-    'bc_desc' => 'Car Transportation Services',
+    'bc_h1' => 'Car Transportation & Carrier Services',
+    'bc_desc' => 'Safe, scratch-free car carrier transport in enclosed hydraulic containers with real-time GPS tracking and doorstep pickup across India.',
     'breadcrumbs' => [
         ['name' => 'Car Transportation']
     ]

@@ -3,8 +3,8 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Terms and Conditions',
-    'bc_desc' => "Terms and Conditions",
+    'bc_h1' => 'Terms & Conditions of Service',
+    'bc_desc' => 'Read our transparent terms of service, shifting guidelines, payment policies, and transit conditions for MoveMantra Packers and Movers.',
     'breadcrumbs' => [
         ['name' => 'Terms and Conditions']
     ]
