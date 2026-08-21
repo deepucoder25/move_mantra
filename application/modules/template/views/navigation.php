@@ -158,7 +158,7 @@
         <a href="<?= site_url('our-branches') ?>"
           class="nav-link<?= $active_tab === 'locations' ? ' active' : '' ?>"><i class="bi bi-geo-alt me-1"></i>Network</a>
         <a href="<?= site_url('blog') ?>" class="nav-link<?= $active_tab === 'blog' ? ' active' : '' ?>"><i class="bi bi-journal-text me-1"></i>Blog</a>
-        <a href="<?= site_url('faqs') ?>" class="nav-link<?= $segment1 === 'faqs' ? ' active' : '' ?>"><i class="bi bi-question-circle me-1"></i>FAQs</a>
+        <a href="<?= site_url('tracking') ?>" class="nav-link<?= $active_tab === 'tracking' ? ' active' : '' ?>"><i class="bi bi-box-seam me-1"></i>Track Order</a>
         <a href="<?= site_url('contact-us') ?>"
           class="nav-link<?= $active_tab === 'contact' ? ' active' : '' ?>"><i class="bi bi-telephone me-1"></i>Contact Us</a>
       </nav>
@@ -255,13 +255,6 @@
           </a>
         </div>
 
-        <div class="mobile-nav-item">
-          <a href="<?= site_url('faqs') ?>" class="mobile-nav-link<?= $segment1 === 'faqs' ? ' active' : '' ?>">
-            <span class="d-flex align-items-center gap-2">
-              <i class="bi bi-question-circle-fill text-primary-brand"></i> FAQs
-            </span>
-          </a>
-        </div>
 
         <div class="mobile-nav-item">
           <a href="<?= site_url('contact-us') ?>" class="mobile-nav-link<?= $active_tab === 'contact' ? ' active' : '' ?>">

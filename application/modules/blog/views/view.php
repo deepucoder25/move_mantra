@@ -21,10 +21,8 @@ $this->load->view('about/dynamic_breadcrumbs', [
                 <!-- Main Content -->
                 <div class="col-lg-8">
                     <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
-                        <!-- Image -->
-                        <div class="mb-4 rounded-4 overflow-hidden shadow-sm position-relative">
                             <?php 
-                            $view_img = !empty($img) ? $img : base_url('assets/images/about/packers_movers.jpg');
+                            $view_img = '';
                             $b_img = @$query[0]->image;
                             if (!empty($b_img)) {
                                 if (file_exists(FCPATH . 'assets/uploads/blog/' . $b_img)) {
@@ -33,19 +31,26 @@ $this->load->view('about/dynamic_breadcrumbs', [
                                     $view_img = base_url('assets/uploads/blog/thumb/' . $b_img);
                                 } elseif (file_exists(FCPATH . 'uploads/blogs/' . $b_img)) {
                                     $view_img = base_url('uploads/blogs/' . $b_img);
+                                } elseif (substr($b_img, 0, 4) === 'http') {
+                                    $view_img = $b_img;
                                 }
                             }
                             ?>
-                            <img src="<?= $view_img ?>" alt="<?= htmlspecialchars(@$query[0]->title ?? 'Blog Image') ?>" class="img-fluid w-100 blog-details-img">
-                        </div>
+                            <?php if (!empty($view_img)): ?>
+                                <div class="mb-4 rounded-4 overflow-hidden shadow-sm position-relative">
+                                    <img src="<?= $view_img ?>" alt="<?= htmlspecialchars(@$query[0]->title ?? 'Blog Image') ?>" class="img-fluid w-100 blog-details-img">
+                                </div>
+                            <?php endif; ?>
                         
                         <!-- Meta Info -->
                         <div class="d-flex flex-wrap align-items-center justify-content-between mb-4 pb-3 border-bottom">
                             <div class="d-flex gap-3 text-muted small">
                                 <?php
                                 $date_val = !empty(@$query[0]->date) ? @$query[0]->date : (!empty(@$query[0]->created_at) ? @$query[0]->created_at : date('Y-m-d'));
+                                $main_ts = strtotime(str_replace('/', '-', $date_val));
+                                $display_date = $main_ts ? date('M d, Y', $main_ts) : date('M d, Y');
                                 ?>
-                                <span class="d-flex align-items-center gap-2"><i class="bi bi-calendar-event blog-icon-primary"></i> <?= date('M d, Y', strtotime($date_val)) ?></span>
+                                <span class="d-flex align-items-center gap-2"><i class="bi bi-calendar-event blog-icon-primary"></i> <?= $display_date ?></span>
                                 <span class="d-flex align-items-center gap-2"><i class="bi bi-person-circle text-success"></i> By <?= htmlspecialchars(!empty(@$query[0]->author) ? @$query[0]->author : 'Admin') ?></span>
                             </div>
                             <div>
@@ -71,28 +76,34 @@ $this->load->view('about/dynamic_breadcrumbs', [
                             <div class="recent-posts-list">
                                 <?php if (!empty($recent_posts)): ?>
                                     <?php foreach ($recent_posts as $post_arr): $post = (object)$post_arr; ?>
-                                        <?php
-                                        $image_file = $post->image ?? '';
-                                        $imagePath = base_url('assets/images/about/packers_movers.jpg');
-                                        if (!empty($image_file)) {
-                                            if (file_exists(FCPATH . 'assets/uploads/blog/' . $image_file)) {
-                                                $imagePath = base_url('assets/uploads/blog/' . $image_file);
-                                            } elseif (file_exists(FCPATH . 'assets/uploads/blog/thumb/' . $image_file)) {
-                                                $imagePath = base_url('assets/uploads/blog/thumb/' . $image_file);
-                                            } elseif (file_exists(FCPATH . 'uploads/blogs/' . $image_file)) {
-                                                $imagePath = base_url('uploads/blogs/' . $image_file);
-                                            }
-                                        }
-                                        $custom_slug = !empty($post->slug) ? $post->slug : rtrim(str_replace("--", "-", urlencode(str_replace(" ", "-", str_replace(",", " ", $post->title)))), "-");
-                                        $p_date = !empty($post->date) ? $post->date : (!empty($post->created_at) ? $post->created_at : date('Y-m-d'));
-                                        ?>
-                                        <a href="<?= site_url('blog/'.$custom_slug) ?>" class="d-flex align-items-center gap-3 mb-3 text-decoration-none post-link-item blog-post-link-item">
-                                            <div class="flex-shrink-0">
-                                                <img src="<?= $imagePath ?>" alt="thumb" class="rounded-3 shadow-sm blog-recent-post-img">
-                                            </div>
+                                         <?php
+                                         $image_file = $post->image ?? '';
+                                         $imagePath = '';
+                                         if (!empty($image_file)) {
+                                             if (file_exists(FCPATH . 'assets/uploads/blog/' . $image_file)) {
+                                                 $imagePath = base_url('assets/uploads/blog/' . $image_file);
+                                             } elseif (file_exists(FCPATH . 'assets/uploads/blog/thumb/' . $image_file)) {
+                                                 $imagePath = base_url('assets/uploads/blog/thumb/' . $image_file);
+                                             } elseif (file_exists(FCPATH . 'uploads/blogs/' . $image_file)) {
+                                                 $imagePath = base_url('uploads/blogs/' . $image_file);
+                                             } elseif (substr($image_file, 0, 4) === 'http') {
+                                                 $imagePath = $image_file;
+                                             }
+                                         }
+                                         $custom_slug = !empty($post->slug) ? $post->slug : rtrim(str_replace("--", "-", urlencode(str_replace(" ", "-", str_replace(",", " ", $post->title)))), "-");
+                                         $p_date = !empty($post->date) ? $post->date : (!empty($post->created_at) ? $post->created_at : date('Y-m-d'));
+                                         $p_ts = strtotime(str_replace('/', '-', $p_date));
+                                         $p_display_date = $p_ts ? date('M d, Y', $p_ts) : date('M d, Y');
+                                         ?>
+                                         <a href="<?= site_url('blog/'.$custom_slug) ?>" class="d-flex align-items-center gap-3 mb-3 text-decoration-none post-link-item blog-post-link-item">
+                                             <?php if (!empty($imagePath)): ?>
+                                                 <div class="flex-shrink-0">
+                                                     <img src="<?= $imagePath ?>" alt="thumb" class="rounded-3 shadow-sm blog-recent-post-img">
+                                                 </div>
+                                             <?php endif; ?>
                                             <div>
                                                 <h6 class="fw-bold text-dark mb-1 blog-post-title"><?= $post->title ?></h6>
-                                                <small class="text-muted"><i class="bi bi-clock me-1"></i> <?= date('M d, Y', strtotime($p_date)) ?></small>
+                                                <small class="text-muted"><i class="bi bi-clock me-1"></i> <?= $p_display_date ?></small>
                                             </div>
                                         </a>
                                     <?php endforeach; ?>

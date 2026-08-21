@@ -52,11 +52,12 @@ $this->load->view('about/dynamic_breadcrumbs', [
                             <span class="gal-album-tag">Logistics Showcase</span>
                             <?php endif; ?>
                             
-                            <img loading="lazy" src="<?= base_url('assets/uploads/gallery/' . $photo->image) ?>" class="gal-photo-img" alt="<?= htmlspecialchars($photo->title) ?>">
+                            <?php $fallback_gal_img = base_url('assets/images/services_modules/household_shifting.jpg'); ?>
+                            <img loading="lazy" src="<?= base_url('assets/uploads/gallery/' . $photo->image) ?>" class="gal-photo-img" alt="<?= htmlspecialchars($photo->title) ?>" onerror="this.onerror=null;this.src='<?= $fallback_gal_img ?>';">
                             
                             <div class="gal-img-overlay">
                                 <a href="<?= base_url('assets/uploads/gallery/' . $photo->image) ?>" target="_blank" class="gal-zoom-btn" title="View Full Image">
-                                    <i class="bi bi-zoom-in"></i>
+                                    <i class="bi bi-search"></i>
                                 </a>
                             </div>
                         </div>

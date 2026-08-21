@@ -108,11 +108,12 @@ html, body {
     font-size: 15px;
     text-decoration: none;
     transition: color 0.25s ease, background-color 0.25s ease;
-    padding: 8px 16px;
+    padding: 8px 14px;
     border-radius: 8px;
     display: inline-flex;
     align-items: center;
     gap: 4px;
+    white-space: nowrap;
 }
 
 .desktop-nav .nav-link i.bi-chevron-down {
@@ -227,7 +228,7 @@ html, body {
 .btn-quote {
     background: var(--gradient-btn);
     color: var(--dark-navy);
-    padding: 10px 24px;
+    padding: 10px 22px;
     border-radius: 50px;
     font-weight: 800;
     font-size: 14px;
@@ -238,6 +239,7 @@ html, body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
+    white-space: nowrap;
 }
 
 .btn-quote:hover {

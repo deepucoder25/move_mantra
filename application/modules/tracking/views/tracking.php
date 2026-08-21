@@ -1,41 +1,30 @@
 <!-- Breadcrumbs Section -->
-<section class="service-breadcrumbs">
-  <div class="container">
-    <nav class="bc-nav">
-      <a href="<?= site_url() ?>">Home</a>
-      <span class="bc-sep">›</span>
-      <span class="bc-current">Track Your Consignment</span>
-    </nav>
-    <h1><span class="bc-title-white">Track Your</span> <span class="bc-title-orange">Consignment</span></h1>
-    <p class="bc-desc">Get real-time updates and accurate status of your shipment.</p>
-  </div>
-  <div class="bc-wave-wrap">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 64" preserveAspectRatio="none">
-      <path d="M0,30 C480,64 960,0 1440,30 L1440,64 L0,64 Z" fill="#ffffff" />
-    </svg>
-  </div>
-</section>
+<?php 
+$this->load->view('about/dynamic_breadcrumbs', [
+    'bc_current' => 'Track Your Consignment',
+    'bc_h1' => 'Live Consignment & Shipment Tracking',
+    'bc_desc' => 'Get real-time updates, LR status, and exact location of your cargo shipment.'
+]); 
+?>
+
 <div class="container py-5">
     <div class="row">
         <!-- Center Column for Premium Design -->
         <div class="col-lg-9 mx-auto">
-            <div class="premium-tracking-card p-4 p-md-5 mb-4 bg-white rounded-4 shadow-sm text-center position-relative overflow-hidden">
-                <!-- Top Decorative Line -->
-                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(90deg, #031b4e, #ff7a16);"></div>
-                
-                <h3 class="mb-3" style="color: #031b4e; font-weight: 800; letter-spacing: -0.5px;">Track Your Shipment</h3>
+            <div class="premium-tracking-card p-4 p-md-5 mb-4 text-center position-relative overflow-hidden">
+                <h3 class="mb-3 premium-tracking-title">Track Your <span>Shipment</span></h3>
                 <p class="text-muted mb-4 px-md-5">Enter your tracking number below to get real-time updates and the accurate status of your cargo.</p>
                 
                 <form action="" id="tracking_form" class="mx-auto" style="max-width: 650px;">
                     <div class="d-flex flex-column flex-md-row gap-3">
                         <div class="position-relative flex-grow-1">
-                            <i class="bi bi-box position-absolute" style="left: 20px; top: 50%; transform: translateY(-50%); color: #ff7a16; font-size: 1.1rem;"></i>
-                            <input type="text" class="form-control form-control-lg premium-tracking-input" id="trackingNumber" name="trackingNumber" placeholder="Enter Tracking Number (e.g. 123456)" required style="padding-left: 55px; border-radius: 50px; border: 2px solid #f1f5f9; box-shadow: none; font-size: 16px; height: 54px; background-color: #f8fafc;">
+                            <i class="bi bi-box-seam position-absolute premium-tracking-icon"></i>
+                            <input type="text" class="form-control form-control-lg premium-tracking-input" id="trackingNumber" name="trackingNumber" placeholder="Enter Tracking Number (e.g. 123456)" required>
                         </div>
-                        <button type="submit" class="btn btn-lg premium-tracking-btn px-4" id="tracking_submit" style="border-radius: 50px; background-color: #ff7a16; color: white; font-weight: 700; border: none; transition: all 0.3s; height: 54px; min-width: 150px;">
+                        <button type="submit" class="btn btn-lg premium-tracking-btn px-4" id="tracking_submit">
                             <i class="bi bi-search me-2"></i> Track Now
                         </button>
-                        <button type="reset" class="btn btn-lg btn-light rounded-circle premium-clear-btn d-none d-md-flex align-items-center justify-content-center" style="width: 54px; height: 54px; border: 2px solid #f1f5f9; color: #64748b; transition: all 0.3s; flex-shrink: 0;" title="Clear">
+                        <button type="reset" class="btn btn-lg btn-light rounded-circle premium-clear-btn d-none d-md-flex align-items-center justify-content-center" title="Clear">
                             <i class="bi bi-x-lg"></i>
                         </button>
                     </div>

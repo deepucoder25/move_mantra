@@ -4,7 +4,7 @@ class Blog extends MX_Controller {
 
     function __construct(){
         parent::__construct();
-        @$this->load->database();
+        $this->load->database();
     }
 
     private function slugify($text) {
@@ -16,13 +16,12 @@ class Blog extends MX_Controller {
 
     private function loadBlogs() {
         try {
-            if (isset($this->db) && $this->db->conn_id) {
-                if ($this->db->table_exists('blog')) {
-                    $this->db->order_by('b_id', 'DESC');
-                    $query = $this->db->get('blog');
-                    if ($query && $query->num_rows() > 0) {
-                        return $query->result_array();
-                    }
+            $this->load->database();
+            if ($this->db && $this->db->table_exists('blog')) {
+                $this->db->order_by('b_id', 'DESC');
+                $query = $this->db->get('blog');
+                if ($query && $query->num_rows() > 0) {
+                    return $query->result_array();
                 }
             }
         } catch (Throwable $t) {

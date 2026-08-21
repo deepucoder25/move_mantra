@@ -13,7 +13,8 @@ class Gallery extends MX_Controller {
         
         $photos = [];
         try {
-            if (isset($this->db) && $this->db->conn_id && $this->db->table_exists('gallery')) {
+            $this->load->database();
+            if ($this->db && $this->db->table_exists('gallery')) {
                 $this->db->where('status', 1);
                 $this->db->order_by('auto_id', 'DESC');
                 $query = $this->db->get('gallery');
@@ -38,7 +39,8 @@ class Gallery extends MX_Controller {
         
         $videos = [];
         try {
-            if (isset($this->db) && $this->db->conn_id && $this->db->table_exists('video_gallery')) {
+            $this->load->database();
+            if ($this->db && $this->db->table_exists('video_gallery')) {
                 $this->db->where('status', 1);
                 $this->db->order_by('auto_id', 'DESC');
                 $query = $this->db->get('video_gallery');

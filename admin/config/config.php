@@ -23,7 +23,7 @@
  |
  */
 
-$config['base_url'] = 'http://127.0.0.1/sanatani_packers';
+$config['base_url'] = 'http://127.0.0.1/movemantra_packers';
 /*
  |--------------------------------------------------------------------------
  | Index File 
