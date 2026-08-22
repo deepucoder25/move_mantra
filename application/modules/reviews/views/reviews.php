@@ -40,7 +40,7 @@
                 <div class="reviews-single-reviewr mt-4 pb-4">
                     <div class="row">
                     <?php
-                    if ($reviews->num_rows() == 0) {
+                    if (!isset($reviews) || !is_object($reviews) || !method_exists($reviews, 'num_rows') || $reviews->num_rows() == 0) {
                         echo "<div class='col-12'><p class='no-reviews-text text-center'>No reviews yet...</p></div>";
                     } else {
                         foreach ($reviews->result() as $r) {

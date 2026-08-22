@@ -405,3 +405,19 @@
         top: 42%;
     }
 }
+
+@media (max-width: 575.98px) {
+    .process-step-title {
+        font-size: 14.5px !important;
+        line-height: 1.25 !important;
+    }
+    .process-step-desc {
+        font-size: 12px !important;
+        line-height: 1.35 !important;
+        max-width: 100% !important;
+    }
+    .process-hexagon-wrap {
+        width: 85px;
+        height: 98px;
+    }
+}

@@ -167,7 +167,7 @@
       <div class="d-flex align-items-center gap-3">
         <!-- Get a Quote Button -->
         <a href="#" class="btn-quote" data-bs-toggle="modal" data-bs-target="#qteModal">
-          <span>Get a Free Quote</span>
+          <span>Get a Quote</span>
           <i class="bi bi-chevron-right ms-1"></i>
         </a>
 

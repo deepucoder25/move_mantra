@@ -30,12 +30,17 @@ class About extends MX_Controller
 
     function testimonials()
     {
-        $this->load->database();
-        if ($this->db->table_exists('reviews')) {
-            $this->db->order_by('r_id', 'desc');
-            $this->db->where('status', 1);
-            $data['db_reviews'] = $this->db->get('reviews');
-        } else {
+        $data['db_reviews'] = NULL;
+        try {
+            @$this->load->database();
+            if (isset($this->db) && is_object($this->db) && @$this->db->table_exists('reviews')) {
+                $this->db->order_by('r_id', 'desc');
+                $this->db->where('status', 1);
+                $data['db_reviews'] = $this->db->get('reviews');
+            }
+        } catch (Throwable $e) {
+            $data['db_reviews'] = NULL;
+        } catch (Exception $e) {
             $data['db_reviews'] = NULL;
         }
 

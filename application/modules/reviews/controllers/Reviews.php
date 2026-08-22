@@ -10,60 +10,72 @@ class Reviews extends MX_Controller
 
     function index()
     {
-        $this->load->database();
-        $this->load->library('pagination');
-        
-        $star_filter = $this->input->get('star');
-        
-        // Count total active reviews for pagination
-        $this->db->where('status', 1);
-        if ($star_filter) {
-            $this->db->where('stars', $star_filter);
-        }
-        $total_rows = $this->db->count_all_results('reviews');
-        
-        // Pagination Config
-        $config['base_url'] = site_url('reviews');
-        $config['total_rows'] = $total_rows;
-        $config['per_page'] = 9;
-        $config['page_query_string'] = TRUE;
-        $config['reuse_query_string'] = TRUE;
-        
-        $config['full_tag_open'] = '<ul class="pagination justify-content-center" style="margin-top: 30px;">';
-        $config['full_tag_close'] = '</ul>';
-        $config['prev_link'] = '&laquo;';
-        $config['prev_tag_open'] = '<li class="page-item">';
-        $config['prev_tag_close'] = '</li>';
-        $config['next_link'] = '&raquo;';
-        $config['next_tag_open'] = '<li class="page-item">';
-        $config['next_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li class="page-item active"><a href="javascript:void(0)" class="page-link" style="background:#002446; border-color:#002446; color:#fff;">';
-        $config['cur_tag_close'] = '</a></li>';
-        $config['num_tag_open'] = '<li class="page-item">';
-        $config['num_tag_close'] = '</li>';
-        $config['first_link'] = 'First';
-        $config['first_tag_open'] = '<li class="page-item">';
-        $config['first_tag_close'] = '</li>';
-        $config['last_link'] = 'Last';
-        $config['last_tag_open'] = '<li class="page-item">';
-        $config['last_tag_close'] = '</li>';
-        $config['attributes'] = array('class' => 'page-link');
-        
-        $this->pagination->initialize($config);
-        
-        $offset = $this->input->get('per_page') ? (int) $this->input->get('per_page') : 0;
+        $data['reviews'] = NULL;
+        $data['pagination'] = '';
 
-        // Fetch data
-        $this->db->order_by('r_id', 'desc');
-        $this->db->where('status', 1);
-        if ($star_filter) {
-            $this->db->where('stars', $star_filter);
+        try {
+            @$this->load->database();
+            if (isset($this->db) && is_object($this->db) && @$this->db->table_exists('reviews')) {
+                $this->load->library('pagination');
+                
+                $star_filter = $this->input->get('star');
+                
+                // Count total active reviews for pagination
+                $this->db->where('status', 1);
+                if ($star_filter) {
+                    $this->db->where('stars', $star_filter);
+                }
+                $total_rows = $this->db->count_all_results('reviews');
+                
+                // Pagination Config
+                $config['base_url'] = site_url('reviews');
+                $config['total_rows'] = $total_rows;
+                $config['per_page'] = 9;
+                $config['page_query_string'] = TRUE;
+                $config['reuse_query_string'] = TRUE;
+                
+                $config['full_tag_open'] = '<ul class="pagination justify-content-center" style="margin-top: 30px;">';
+                $config['full_tag_close'] = '</ul>';
+                $config['prev_link'] = '&laquo;';
+                $config['prev_tag_open'] = '<li class="page-item">';
+                $config['prev_tag_close'] = '</li>';
+                $config['next_link'] = '&raquo;';
+                $config['next_tag_open'] = '<li class="page-item">';
+                $config['next_tag_close'] = '</li>';
+                $config['cur_tag_open'] = '<li class="page-item active"><a href="javascript:void(0)" class="page-link" style="background:#002446; border-color:#002446; color:#fff;">';
+                $config['cur_tag_close'] = '</a></li>';
+                $config['num_tag_open'] = '<li class="page-item">';
+                $config['num_tag_close'] = '</li>';
+                $config['first_link'] = 'First';
+                $config['first_tag_open'] = '<li class="page-item">';
+                $config['first_tag_close'] = '</li>';
+                $config['last_link'] = 'Last';
+                $config['last_tag_open'] = '<li class="page-item">';
+                $config['last_tag_close'] = '</li>';
+                $config['attributes'] = array('class' => 'page-link');
+                
+                $this->pagination->initialize($config);
+                
+                $offset = $this->input->get('per_page') ? (int) $this->input->get('per_page') : 0;
+
+                // Fetch data
+                $this->db->order_by('r_id', 'desc');
+                $this->db->where('status', 1);
+                if ($star_filter) {
+                    $this->db->where('stars', $star_filter);
+                }
+                
+                $data['reviews'] = $this->db->get('reviews', $config['per_page'], $offset);
+                $data['pagination'] = $this->pagination->create_links();
+            }
+        } catch (Throwable $e) {
+            $data['reviews'] = NULL;
+            $data['pagination'] = '';
+        } catch (Exception $e) {
+            $data['reviews'] = NULL;
+            $data['pagination'] = '';
         }
-        
-        $query = $this->db->get('reviews', $config['per_page'], $offset);
-        
-        $data['reviews'] = $query;
-        $data['pagination'] = $this->pagination->create_links();
+
         $data['title'] = "Customer Reviews & Ratings | 40+ Years Relocation Trust | " . $this->comp['company3'];
         $data['description'] = "Read authentic customer reviews and ratings for " . $this->comp['company3'] . ". Over 39,850+ satisfied clients trust us for safe house shifting, office relocation, and vehicle transportation.";
         $data['module'] = "reviews";
