@@ -75,17 +75,12 @@ class Reviews extends MX_Controller
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $this->load->database();
             
-            $email = $this->input->post('email');
-            
-            // Check if email already exists
-            $this->db->where('email', $email);
-            $existing = $this->db->get('reviews');
-            
-            if ($existing->num_rows() > 0) {
-                $this->session->set_flashdata('error', 'You have already submitted a review with this email address.');
-                redirect('reviews');
-                return;
+            $redirect_url = $this->input->post('redirect_url');
+            if (empty($redirect_url)) {
+                $redirect_url = isset($_SERVER['HTTP_REFERER']) && !empty($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : 'reviews';
             }
+
+            $email = $this->input->post('email');
             
             $uploaded_images = [];
             if (isset($_FILES['review_images']) && !empty($_FILES['review_images']['name'][0])) {
@@ -147,8 +142,6 @@ class Reviews extends MX_Controller
                                     }
                                 }
                             } else {
-                                // If it's small enough but not a jpeg, we still rename it to jpg but we should convert it
-                                // Or we just keep the original extension if it's small. Let's keep original extension.
                                 $ext = pathinfo($name, PATHINFO_EXTENSION);
                                 $new_name = uniqid('rev_') . '.' . $ext;
                                 $dest = $upload_path . $new_name;
@@ -178,7 +171,7 @@ class Reviews extends MX_Controller
             $this->db->insert('reviews', $data);
             
             $this->session->set_flashdata('success', 'Thank you! Your review has been submitted successfully.');
-            redirect('reviews');
+            redirect($redirect_url);
         }
     }
 }

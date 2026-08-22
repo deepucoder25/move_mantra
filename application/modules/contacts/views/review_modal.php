@@ -1,57 +1,80 @@
 
 <!-- Review Form Modal -->
 <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-md">
         <div class="modal-content border-0 contact-review-modal-content">
-            <div class="modal-header border-0 pb-0 px-3 pt-3">
-                <h3 class="modal-title contact-review-modal-title fs-5" id="reviewModalLabel">Share Your Experience</h3>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <!-- Modal Header -->
+            <div class="contact-review-modal-header">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="contact-review-header-icon">
+                        <i class="bi bi-star-fill"></i>
+                    </div>
+                    <div>
+                        <h3 class="modal-title contact-review-modal-title" id="reviewModalLabel">Share Your Experience</h3>
+                        <span class="contact-review-modal-sub">Help us improve MoveMantra services</span>
+                    </div>
+                </div>
+                <button type="button" class="contact-review-close-btn" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x-lg"></i>
+                </button>
             </div>
-            <div class="modal-body p-3">
+
+            <!-- Modal Body -->
+            <div class="modal-body p-4">
                 <form action="<?= site_url('reviews/submit') ?>" method="POST" enctype="multipart/form-data">
-                    <div class="mb-2">
-                        <label class="contact-review-form-label mb-1">Your Full Name</label>
-                        <input type="text" name="name" class="form-control contact-review-form-control form-control-sm" placeholder="Enter your name" required>
+                    <div class="mb-3">
+                        <label class="contact-review-form-label"><i class="bi bi-person-fill me-1 text-primary-light"></i> Your Full Name</label>
+                        <input type="text" name="name" class="form-control contact-review-form-control" placeholder="Enter your full name" required>
                     </div>
-                    <div class="mb-2">
-                        <label class="contact-review-form-label mb-1">Your Email</label>
-                        <input type="email" name="email" class="form-control contact-review-form-control form-control-sm" placeholder="Enter your email" required>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label class="contact-review-form-label"><i class="bi bi-envelope-fill me-1 text-primary-light"></i> Email Address</label>
+                            <input type="email" name="email" class="form-control contact-review-form-control" placeholder="name@example.com" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="contact-review-form-label"><i class="bi bi-geo-alt-fill me-1 text-primary-light"></i> Your City / Route</label>
+                            <input type="text" name="city" class="form-control contact-review-form-control" placeholder="e.g. Lucknow" value="<?= isset($city) ? $city : '' ?>" required>
+                        </div>
                     </div>
-                    <div class="mb-2">
-                        <label class="contact-review-form-label mb-1">Your City</label>
-                        <input type="text" name="city" class="form-control contact-review-form-control form-control-sm" placeholder="e.g. Lucknow" value="<?= isset($city) ? $city : '' ?>" required>
-                    </div>
-                    <div class="mb-2">
-                        <label class="contact-review-form-label mb-1">Upload Images (Max 4)</label>
-                        <input type="file" id="review-images-input" name="review_images[]" class="form-control contact-review-form-control form-control-sm" accept="image/jpeg, image/png, image/webp" multiple>
-                        <small class="text-muted" style="font-size: 0.75rem;">Max 150 KB per image. Select up to 4.</small>
-                    </div>
-                    <div class="mb-2">
-                        <label class="contact-review-form-label mb-1">Your Rating</label>
-                        <div class="d-flex align-items-center gap-2 mb-1">
-                            <div class="contact-rating-select mb-0" id="star-rating">
+
+                    <div class="mb-3">
+                        <label class="contact-review-form-label"><i class="bi bi-star-half me-1 text-primary-light"></i> Your Star Rating</label>
+                        <div class="contact-review-rating-card">
+                            <div class="contact-rating-select" id="star-rating">
                                 <i class="bi bi-star-fill contact-rating-item active" data-value="1"></i>
                                 <i class="bi bi-star-fill contact-rating-item active" data-value="2"></i>
                                 <i class="bi bi-star-fill contact-rating-item active" data-value="3"></i>
                                 <i class="bi bi-star-fill contact-rating-item active" data-value="4"></i>
                                 <i class="bi bi-star-fill contact-rating-item active" data-value="5"></i>
                             </div>
-                            <div class="d-flex align-items-center gap-1 contact-review-rating-wrap ms-2">
-                                <div id="rating-emoji" class="contact-review-emoji fs-5">😍</div>
-                                <div><span id="rating-number" class="contact-review-number fw-bold">5</span><span class="contact-review-total text-muted">/5</span></div>
+                            <div class="contact-review-rating-badge">
+                                <span id="rating-emoji" class="contact-review-emoji">😍</span>
+                                <span id="rating-number" class="contact-review-number">5</span><span class="contact-review-total">/5</span>
                             </div>
                         </div>
                         <input type="hidden" name="rating" id="rating-input" value="5">
                     </div>
-                    <div class="mb-2">
-                        <label class="contact-review-form-label mb-1">Your Message</label>
-                        <textarea name="review" class="form-control contact-review-form-control form-control-sm" rows="3" placeholder="Write your feedback here..." required></textarea>
+
+                    <div class="mb-3">
+                        <label class="contact-review-form-label"><i class="bi bi-camera-fill me-1 text-primary-light"></i> Upload Move Photos (Optional, Max 4)</label>
+                        <input type="file" id="review-images-input" name="review_images[]" class="form-control contact-review-form-control" accept="image/jpeg, image/png, image/webp" multiple>
+                        <small class="contact-review-file-hint"><i class="bi bi-info-circle me-1"></i>Max 150 KB per image. Select up to 4 photos (JPG, PNG, WebP).</small>
                     </div>
-                    <button type="submit" class="contact-btn-submit-review mt-2 py-1">Submit Review</button>
+
+                    <div class="mb-3">
+                        <label class="contact-review-form-label"><i class="bi bi-chat-left-text-fill me-1 text-primary-light"></i> Your Detailed Feedback</label>
+                        <textarea name="review" class="form-control contact-review-form-control" rows="3" placeholder="Write your shifting experience, packing quality, and overall feedback..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="contact-btn-submit-review">
+                        <i class="bi bi-send-fill me-2"></i> Submit My Review
+                    </button>
                 </form>
-                <p class="text-muted text-center mb-0 mt-2" style="font-size: 0.75rem;">
-                    <i class="bi bi-info-circle me-1"></i> Reviews are subject to approval.
-                </p>
+
+                <div class="contact-review-footer-note mt-3 text-center">
+                    <i class="bi bi-shield-check me-1 text-success"></i> Verified Relocation Feedback • 100% Data Confidentiality
+                </div>
             </div>
         </div>
     </div>

@@ -672,20 +672,195 @@ select.cnt-input-field {
 
 /* Review Modal */
 .contact-review-form-label { font-weight: 600; font-size: 0.9rem; color: var(--text-dark); margin-bottom: 8px; }
-.contact-review-form-control { border-radius: 10px; border: 1px solid #e2e8f0; padding: 12px 15px; }
-.contact-review-form-control:focus { border-color: var(--secondry-color); box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.1); outline: none; }
-.contact-rating-select { display: flex; gap: 10px; margin-bottom: 20px; }
-.contact-rating-item { cursor: pointer; font-size: 24px; color: #cbd5e1; transition: 0.2s; }
-.contact-rating-item.active { color: #f59e0b; }
-.contact-btn-submit-review { background: var(--gradient-btn); color: var(--dark-navy); border: none; padding: 14px 30px; border-radius: 50px; font-weight: 800; width: 100%; transition: 0.3s; margin-top: 10px; box-shadow: 0 6px 18px rgba(2, 132, 199, 0.2); }
-.contact-btn-submit-review:hover { background: var(--dark-navy); transform: translateY(-2px); color: var(--white); }
+/* ==========================================================================
+   Review Form Modal Design System - Powered by navigation.css CSS variables
+   Uses: --primary-blue, --secondry-color, --dark-navy, --text-dark, --white, --gradient-btn
+   ========================================================================== */
 
-.contact-review-modal-content { border-radius: 20px; box-shadow: 0 20px 40px rgba(13,71,161,0.15); }
-.contact-review-modal-title { font-weight: 800; color: var(--dark-navy); }
-.contact-review-rating-wrap { margin-top: -4px; }
-.contact-review-emoji { font-size: 28px; line-height: 1; }
-.contact-review-number { font-weight: 700; color: var(--text-dark); font-size: 1.1rem; }
-.contact-review-total { color: #94a3b8; font-weight: 600; }
+.contact-review-modal-content {
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(13, 71, 161, 0.2);
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid rgba(13, 71, 161, 0.1);
+}
+
+.contact-review-modal-header {
+    background: linear-gradient(135deg, var(--dark-navy) 0%, var(--secondry-color) 100%);
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.contact-review-header-icon {
+    width: 44px;
+    height: 44px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f59e0b;
+    font-size: 1.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-review-modal-title {
+    font-weight: 800;
+    color: var(--white);
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.contact-review-modal-sub {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.contact-review-close-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    border: none;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-review-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.contact-review-form-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--dark-navy);
+    margin-bottom: 6px;
+    display: block;
+}
+
+.contact-review-form-control {
+    border-radius: 12px;
+    border: 1.5px solid rgba(13, 71, 161, 0.12);
+    padding: 11px 16px;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    background: #f8fafc;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.contact-review-form-control:focus {
+    background: var(--white);
+    border-color: var(--secondry-color);
+    box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.15);
+    outline: none;
+}
+
+.contact-review-rating-card {
+    background: #f8fafc;
+    border: 1.5px solid rgba(13, 71, 161, 0.1);
+    border-radius: 14px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-rating-select {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 0;
+}
+
+.contact-rating-item {
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #cbd5e1;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact-rating-item:hover {
+    transform: scale(1.2);
+}
+
+.contact-rating-item.active {
+    color: #f59e0b;
+}
+
+.contact-review-rating-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--white);
+    padding: 6px 14px;
+    border-radius: 50px;
+    border: 1px solid rgba(13, 71, 161, 0.08);
+    box-shadow: 0 2px 8px rgba(13, 71, 161, 0.05);
+}
+
+.contact-review-emoji {
+    font-size: 1.4rem;
+    line-height: 1;
+}
+
+.contact-review-number {
+    font-weight: 900;
+    color: var(--dark-navy);
+    font-size: 1.1rem;
+}
+
+.contact-review-total {
+    color: #94a3b8;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.contact-review-file-hint {
+    display: block;
+    color: #64748b;
+    font-size: 0.78rem;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.contact-btn-submit-review {
+    background: var(--gradient-btn);
+    color: var(--dark-navy);
+    border: none;
+    padding: 13px 30px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.25);
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.contact-btn-submit-review:hover {
+    background: var(--gradient-btn);
+    color: var(--dark-navy);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(130, 238, 253, 0.5);
+    filter: brightness(1.08);
+}
+
+.contact-review-footer-note {
+    font-size: 0.78rem;
+    color: #64748b;
+    font-weight: 600;
+}
 
 /* Premium Consignment Tracking Page Styles */
 .premium-tracking-card {

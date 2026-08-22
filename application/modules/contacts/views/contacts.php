@@ -3,7 +3,7 @@
 
 <!-- Breadcrumbs Section -->
 <?php $this->load->view('about/dynamic_breadcrumbs', [
-    'bc_h1' => 'Contact MoveMantra Packers & Movers',
+    'bc_h1' => 'Contact ' . $company3,
     'bc_desc' => 'Get in touch with our 24/7 customer support team for instant shifting quotes, branch location inquiries, or booking assistance.',
     'breadcrumbs' => [
         ['name' => 'Contact Us']
@@ -20,7 +20,7 @@
                 <i class="bi bi-headset"></i> 24/7 Relocation Support Hub
             </span>
             <h1 class="cnt-title">
-                Get In Touch With <span class="cnt-gradient-text"><?= !empty($company3) ? $company3 : 'MoveMantra Packers & Movers' ?></span>
+                Get In Touch With <span class="cnt-gradient-text"><?= $company3 ?></span>
             </h1>
             <p class="cnt-subtitle">
                 Planning a move or need assistance? Fill out the quick form below for an instant shifting quote, or connect directly with our experts via phone or WhatsApp. We are available 24/7 across India!

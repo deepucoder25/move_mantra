@@ -264,7 +264,7 @@
         <div class="login-card">
             
             <div class="logo-container">
-                <img src="<?=base_url("assets/images/logo/logo.png")?>" alt="LYT Cargo Logo">
+                <img src="<?=base_url("assets/images/logo/logo.png")?>" alt="MoveMantra Packers & Movers Logo">
             </div>
 
             <div class="welcome-text">

@@ -30,6 +30,15 @@ class About extends MX_Controller
 
     function testimonials()
     {
+        $this->load->database();
+        if ($this->db->table_exists('reviews')) {
+            $this->db->order_by('r_id', 'desc');
+            $this->db->where('status', 1);
+            $data['db_reviews'] = $this->db->get('reviews');
+        } else {
+            $data['db_reviews'] = NULL;
+        }
+
         $data['title'] = "Customer Reviews & Testimonials | " . $this->comp['company3'];
         $data['description'] = "Read real customer reviews and testimonials about " . $this->comp['company3'] . ". See how our professional packing and moving team delivers 5-star household and vehicle shifting experiences.";
         $data['module'] = "about";
