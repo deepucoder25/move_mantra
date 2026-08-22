@@ -1,29 +1,13 @@
-/* contact_modules.css - Styling using navigation.css variables */
-
-/* Call Me Back Modal */
-.contact-modal-content { border-radius: 16px; border: none; box-shadow: 0 10px 30px rgba(13, 71, 161, 0.15); }
-.contact-modal-header { position: relative; }
-.contact-modal-close { position: absolute; right: 15px; top: 15px; z-index: 2; width: 10px; height: 10px; font-weight: bold; }
-.contact-modal-title { color: var(--dark-navy); font-size: 32px; font-weight: 800; }
-.contact-modal-input { border-radius: 8px; padding: 12px 15px; border: 1px solid rgba(13, 71, 161, 0.15); font-size: 16px; }
-.contact-modal-btn { background: var(--gradient-btn); color: var(--dark-navy); border-radius: 8px; padding: 12px; font-size: 18px; font-weight: 700; border: none; transition: all 0.3s; }
-.contact-modal-btn:hover { background: var(--dark-navy); color: var(--white); }
-.contact-modal-result { font-weight: 600; }
-
-/* Contacts page */
-.contact-title-primary { color: var(--dark-navy); }
-.contact-icon-box { width: 60px; height: 60px; font-size: 1.5rem; background: rgba(130, 238, 253, 0.2); color: var(--secondry-color); border-radius: 16px; }
-.contact-icon-box-success { width: 60px; height: 60px; font-size: 1.5rem; background: rgba(25, 135, 84, 0.1); color: #198754; border-radius: 16px; }
-.contact-icon-box-warning { width: 60px; height: 60px; font-size: 1.5rem; background: rgba(255, 193, 7, 0.1); color: #ffc107; border-radius: 16px; }
-.contact-border-warning { border-color: var(--secondry-color) !important; }
-.contact-input-rounded { border-radius: 10px; }
-.contact-btn-rounded { border-radius: 10px; font-size: 1.1rem; }
-
 /* ==========================================================================
-   Modern Contact Page Styling - MoveMantra Design System
-   Uses variables: --primary-blue, --secondry-color, --dark-navy, --text-dark, --white, --gradient-btn
+   MOVE MANTRA - CONTACTS & MODALS STYLING SYSTEM
+   Covers: contacts.php, quotemodal.php, review_modal.php, tracking.php
+   Powered by navigation.css CSS variables:
+   --primary-blue, --secondry-color, --dark-navy, --text-dark, --white, --gradient-btn
    ========================================================================== */
 
+/* --------------------------------------------------------------------------
+   1. CONTACT US PAGE STYLING (contacts.php)
+   -------------------------------------------------------------------------- */
 .cnt-page-section {
     padding: 50px 0 70px 0;
     background: #f8fafc;
@@ -104,6 +88,7 @@
 .cnt-gradient-text {
     background: linear-gradient(120deg, var(--dark-navy), var(--secondry-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -490,6 +475,7 @@ select.cnt-input-field {
     margin-bottom: 6px;
     background: linear-gradient(120deg, var(--dark-navy), var(--secondry-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -568,81 +554,9 @@ select.cnt-input-field {
     transform: translateY(-2px);
 }
 
-/* Responsive Styles */
-@media (max-width: 991.98px) {
-    .cnt-header-card {
-        padding: 25px 25px;
-    }
-    .cnt-title {
-        font-size: 1.75rem;
-    }
-    .cnt-form-card {
-        padding: 25px;
-    }
-    .cnt-branch-locator-card {
-        padding: 22px 20px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .cnt-page-section {
-        padding: 30px 0 50px 0;
-    }
-    .cnt-header-card {
-        padding: 20px 18px;
-        border-radius: 18px;
-    }
-    .cnt-title {
-        font-size: 1.45rem;
-    }
-    .cnt-subtitle {
-        font-size: 0.92rem;
-    }
-    .cnt-form-card {
-        padding: 20px 16px;
-        border-radius: 18px;
-    }
-    .cnt-card-header {
-        gap: 12px;
-        margin-bottom: 18px;
-        padding-bottom: 14px;
-    }
-    .cnt-card-icon-box {
-        width: 44px;
-        height: 44px;
-        font-size: 1.2rem;
-        border-radius: 12px;
-    }
-    .cnt-card-title {
-        font-size: 1.2rem;
-    }
-    .cnt-input-addon {
-        width: 42px;
-        height: 44px;
-        font-size: 1rem;
-    }
-    .cnt-input-field {
-        height: 44px;
-        font-size: 0.9rem;
-    }
-    .cnt-submit-btn {
-        height: 48px;
-        font-size: 0.95rem;
-    }
-    .cnt-trust-bar {
-        padding: 20px 10px;
-        border-radius: 18px;
-    }
-    .cnt-trust-number {
-        font-size: 1.5rem;
-    }
-    .cnt-trust-label {
-        font-size: 0.75rem;
-    }
-}
-
-
-/* Quote Modal - Powered by navigation.css variables */
+/* --------------------------------------------------------------------------
+   2. INSTANT QUOTE MODAL STYLING (quotemodal.php)
+   -------------------------------------------------------------------------- */
 .contact-quote-gap { gap: 10px; }
 .contact-custom-modal .modal-dialog { max-width: 500px; }
 .contact-custom-modal .modal-content { border: 0; border-radius: 24px; overflow: hidden; background: var(--white); box-shadow: 0 25px 70px rgba(13, 71, 161, 0.2); }
@@ -668,15 +582,11 @@ select.cnt-input-field {
 #quotemodal button[type="reset"] { background: rgba(130, 238, 253, 0.2); color: var(--dark-navy); box-shadow: none; }
 #quotemodal button[type="reset"]:hover { background: rgba(2, 132, 199, 0.15); color: var(--secondry-color); }
 #resultquotemodal { margin-top: 10px; text-align: center; font-weight: 600; }
-@media (max-width: 576px) { #quotemodal { padding: 15px; } .contact-form-header { padding: 12px 15px; } .contact-form-header span { font-size: 18px; } }
 
-/* Review Modal */
+/* --------------------------------------------------------------------------
+   3. WRITE REVIEW MODAL STYLING (review_modal.php)
+   -------------------------------------------------------------------------- */
 .contact-review-form-label { font-weight: 600; font-size: 0.9rem; color: var(--text-dark); margin-bottom: 8px; }
-/* ==========================================================================
-   Review Form Modal Design System - Powered by navigation.css CSS variables
-   Uses: --primary-blue, --secondry-color, --dark-navy, --text-dark, --white, --gradient-btn
-   ========================================================================== */
-
 .contact-review-modal-content {
     border-radius: 24px;
     box-shadow: 0 25px 60px rgba(13, 71, 161, 0.2);
@@ -739,14 +649,6 @@ select.cnt-input-field {
 .contact-review-close-btn:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: rotate(90deg);
-}
-
-.contact-review-form-label {
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--dark-navy);
-    margin-bottom: 6px;
-    display: block;
 }
 
 .contact-review-form-control {
@@ -862,7 +764,9 @@ select.cnt-input-field {
     font-weight: 600;
 }
 
-/* Premium Consignment Tracking Page Styles */
+/* --------------------------------------------------------------------------
+   4. CONSIGNMENT TRACKING SYSTEM (tracking.php)
+   -------------------------------------------------------------------------- */
 .premium-tracking-card {
     background: var(--white);
     border-radius: 24px;
@@ -892,6 +796,7 @@ select.cnt-input-field {
     color: var(--secondry-color);
     background: linear-gradient(120deg, var(--dark-navy), var(--secondry-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -957,7 +862,6 @@ select.cnt-input-field {
     border-color: var(--secondry-color) !important;
 }
 
-/* Tracking Details Result Card */
 .contact-tracking-details-card {
     display: none;
 }
@@ -990,7 +894,6 @@ select.cnt-input-field {
     letter-spacing: 0.5px;
 }
 
-/* Timeline Stepper Progress Bar */
 .contact-tracking-progress {
     position: relative;
     padding: 30px 20px 20px 20px;
@@ -1076,7 +979,6 @@ select.cnt-input-field {
     font-weight: 600;
 }
 
-/* History Table Styling */
 .contact-tracking-table table {
     width: 100%;
     border-collapse: collapse;
@@ -1106,14 +1008,6 @@ select.cnt-input-field {
     margin-top: 15px;
 }
 
-@media(max-width: 768px) {
-    .contact-track-details-flex {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 10px;
-    }
-}
-
 .contact-tracking-success { color: #16a34a; }
 .contact-tracking-link {
     background: var(--gradient-btn);
@@ -1127,4 +1021,90 @@ select.cnt-input-field {
     color: var(--secondry-color);
     font-weight: 600;
     text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   5. CONSOLIDATED RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    .cnt-header-card {
+        padding: 25px 25px;
+    }
+    .cnt-title {
+        font-size: 1.75rem;
+    }
+    .cnt-form-card {
+        padding: 25px;
+    }
+    .cnt-branch-locator-card {
+        padding: 22px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-track-details-flex {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .cnt-page-section {
+        padding: 30px 0 50px 0;
+    }
+    .cnt-header-card {
+        padding: 20px 18px;
+        border-radius: 18px;
+    }
+    .cnt-title {
+        font-size: 1.45rem;
+    }
+    .cnt-subtitle {
+        font-size: 0.92rem;
+    }
+    .cnt-form-card {
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+    .cnt-card-header {
+        gap: 12px;
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+    }
+    .cnt-card-icon-box {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+        border-radius: 12px;
+    }
+    .cnt-card-title {
+        font-size: 1.2rem;
+    }
+    .cnt-input-addon {
+        width: 42px;
+        height: 44px;
+        font-size: 1rem;
+    }
+    .cnt-input-field {
+        height: 44px;
+        font-size: 0.9rem;
+    }
+    .cnt-submit-btn {
+        height: 48px;
+        font-size: 0.95rem;
+    }
+    .cnt-trust-bar {
+        padding: 20px 10px;
+        border-radius: 18px;
+    }
+    .cnt-trust-number {
+        font-size: 1.5rem;
+    }
+    .cnt-trust-label {
+        font-size: 0.75rem;
+    }
+    #quotemodal { padding: 15px; }
+    .contact-form-header { padding: 12px 15px; }
+    .contact-form-header span { font-size: 18px; }
 }

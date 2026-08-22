@@ -1,6 +1,6 @@
-/* packers_movers_modules.css */
-
-/* city_list.php - Enhanced City Grid Design */
+/* --------------------------------------------------------------------------
+   1. CITY LISTINGS & GRID (city_list.php)
+   -------------------------------------------------------------------------- */
 .pm-list-service-page {
     background-color: #f8fafc;
     background-image: radial-gradient(rgba(2, 132, 199, 0.05) 1px, transparent 1px);
@@ -102,7 +102,6 @@
     justify-content: flex-start !important;
 }
 
-/* Icon Container */
 .pm-list-city-card .pm-list-icon {
     width: 38px;
     height: 38px;
@@ -133,7 +132,6 @@
     color: var(--dark-navy);
 }
 
-/* Text Container */
 .pm-list-city-name {
     flex: 1;
     min-width: 0;
@@ -168,7 +166,6 @@
     color: var(--secondry-color);
 }
 
-/* Chevron Arrow */
 .pm-list-arrow {
     font-size: 0.8rem;
     color: #cbd5e1;
@@ -181,42 +178,9 @@
     transform: translateX(3px);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .pm-list-service-page {
-        padding: 40px 0 !important;
-    }
-    .pm-list-card-body {
-        padding: 10px 12px !important;
-        gap: 8px;
-    }
-    .pm-list-city-card .pm-list-icon {
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-    }
-    .pm-list-city-card .pm-list-icon i {
-        font-size: 0.95rem;
-    }
-    .pm-list-city-tag {
-        font-size: 0.62rem;
-    }
-    .pm-list-city-title {
-        font-size: 0.8rem;
-    }
-    .pm-list-arrow {
-        display: none;
-    }
-}
-
-@media (max-width: 576px) {
-    .row > div {
-        padding-left: 6px;
-        padding-right: 6px;
-    }
-}
-
-/* states.php - Presence Across India Section */
+/* --------------------------------------------------------------------------
+   2. STATES PRESENCE SECTION (states.php)
+   -------------------------------------------------------------------------- */
 .pm-states-section {
     background-color: #f8fafc;
     position: relative;
@@ -253,7 +217,6 @@
     margin-top: 8px;
 }
 
-/* Card Box Design */
 .pm-states-card {
     background: var(--white);
     border-radius: 16px;
@@ -277,7 +240,6 @@
     transition: width 0.4s ease;
 }
 
-/* Hover Effect for Card Box */
 .pm-states-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 16px 32px rgba(13, 71, 161, 0.12);
@@ -288,7 +250,6 @@
     width: 100%;
 }
 
-/* Image Container */
 .pm-states-img {
     position: relative;
     height: 190px;
@@ -307,7 +268,6 @@
     transform: scale(1.08);
 }
 
-/* Image Hover Overlay */
 .pm-states-overlay {
     position: absolute;
     inset: 0;
@@ -350,7 +310,6 @@
     transform: translateX(4px);
 }
 
-/* Card Body */
 .pm-states-body {
     padding: 16px 20px;
     display: flex;
@@ -385,102 +344,295 @@
     color: var(--secondry-color);
 }
 
-.pm-states-yellow-dash { display: inline-block; width: 24px; height: 3px; background-color: var(--secondry-color); border-radius: 2px; flex-shrink: 0; }
-.pm-states-city-breadcrumb .breadcrumb-item a { color: var(--white); }
-.pm-states-city-breadcrumb .breadcrumb-item.active { color: var(--primary-blue); }
-
-/* Responsive Adjustments */
-@media (max-width: 991px) {
-    .pm-states-img {
-        height: 170px;
-    }
-}
-
-@media (max-width: 767px) {
-    .pm-states-img {
-        height: 150px;
-    }
-    .pm-states-heading {
-        font-size: 1.75rem;
-    }
-    .pm-states-body {
-        padding: 14px 16px;
-    }
-    .pm-states-card-title {
-        font-size: 0.95rem;
-    }
-}
-
-@media (max-width: 576px) {
-    .pm-states-img {
-        height: 170px;
-    }
-}
-
-/* city_page_design/city_map.php */
-.pm-city-map-iframe { border: 0; }
-
-/* --- City Page Design Styles --- */
-.pm-city-details-section {
+/* --------------------------------------------------------------------------
+   3. CITY ABOUT SECTION (city_about.php)
+   -------------------------------------------------------------------------- */
+.pm-city-about-section {
     background-color: #f8fafc;
-    padding: 50px 0 70px;
+    position: relative;
+    overflow: hidden;
 }
 
-.pm-city-content-card,
-.city-content-card {
+.pm-about-main-card {
     background: var(--white);
-    border-radius: 20px;
-    padding: 36px;
-    box-shadow: 0 6px 24px rgba(13, 71, 161, 0.05);
-    border: 1px solid #eef2f6;
-    transition: all 0.3s ease;
+    border-radius: 24px;
+    padding: 42px;
+    box-shadow: 0 10px 40px rgba(13, 71, 161, 0.06);
+    border: 1px solid rgba(2, 132, 199, 0.12);
+    position: relative;
 }
 
-.pm-city-section-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 4px 14px;
+.pm-about-eyebrow {
     background: rgba(2, 132, 199, 0.08);
     color: var(--secondry-color);
+    border: 1px solid rgba(2, 132, 199, 0.18);
     font-size: 0.78rem;
-    font-weight: 700;
-    border-radius: 20px;
-    border: 1px solid rgba(2, 132, 199, 0.15);
-    text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 10px;
 }
 
-.pm-city-section-title,
-.city-section-title-sm {
-    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
-    font-weight: 800;
+.pm-about-eyebrow i {
+    color: var(--secondry-color);
+}
+
+.pm-about-title {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
     color: var(--text-dark);
-    line-height: 1.3;
-    margin-bottom: 20px;
+    line-height: 1.25;
 }
 
-.pm-city-accent {
+.pm-about-accent {
     color: var(--dark-navy);
     position: relative;
     display: inline-block;
 }
 
-.pm-city-accent::after {
+.pm-about-accent::after {
     content: "";
     position: absolute;
-    bottom: -2px;
+    bottom: -4px;
     left: 0;
     width: 100%;
-    height: 3px;
+    height: 4px;
     background: var(--gradient-btn);
     border-radius: 2px;
 }
 
-/* ==============================================
-   REVIEWS SPEECH BUBBLE & PROFILE CARDS V2 STYLING
-   ============================================== */
+.pm-about-lead {
+    font-size: 1.05rem;
+    color: var(--text-dark);
+    font-weight: 500;
+    line-height: 1.65;
+}
+
+.pm-about-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.pm-about-feat-item {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.pm-about-feat-item:hover {
+    background: var(--white);
+    border-color: rgba(2, 132, 199, 0.3);
+    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.08);
+    transform: translateY(-2px);
+}
+
+.pm-about-feat-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--gradient-btn);
+    color: var(--dark-navy);
+    font-size: 1.15rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+}
+
+.pm-about-cta-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap !important;
+}
+
+.btn-pm-about-primary {
+    background: var(--gradient-btn);
+    color: var(--dark-navy);
+    border: none;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.25);
+    white-space: nowrap;
+}
+
+.btn-pm-about-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(2, 132, 199, 0.35);
+    color: var(--dark-navy);
+}
+
+.btn-pm-about-outline {
+    background: transparent;
+    color: var(--dark-navy);
+    border: 2px solid var(--dark-navy);
+    padding: 12px 24px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-pm-about-outline:hover {
+    background: var(--dark-navy);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* 3-Image Showcase Grid */
+.pm-about-img-grid-container {
+    position: relative;
+    padding: 10px 0;
+}
+
+.pm-about-img-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 90%;
+    background: var(--gradient-btn);
+    filter: blur(45px);
+    opacity: 0.28;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pm-about-img-dots {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 120px;
+    height: 120px;
+    background-image: radial-gradient(var(--secondry-color) 1.5px, transparent 1.5px);
+    background-size: 14px 14px;
+    opacity: 0.4;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.pm-about-img-box {
+    position: relative;
+    z-index: 1;
+    border-radius: 20px !important;
+    border: 3px solid var(--white) !important;
+    box-shadow: 0 10px 30px rgba(13, 71, 161, 0.12) !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+    background: var(--dark-navy);
+}
+
+.pm-about-img-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(13, 71, 161, 0.22) !important;
+    border-color: var(--secondry-color) !important;
+}
+
+.pm-img-box-main { height: 380px; }
+.pm-img-box-sub { height: 182px; }
+
+.pm-grid-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.pm-about-img-box:hover .pm-grid-img {
+    transform: scale(1.08);
+}
+
+.pm-img-box-badge {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    background: rgba(13, 71, 161, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--white);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pm-about-title-sm {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+/* --------------------------------------------------------------------------
+   4. RELOCATION PROCESS ROADMAP (city_process.php)
+   -------------------------------------------------------------------------- */
+.pm-city-process-card-v2 {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 42px;
+    box-shadow: 0 10px 40px rgba(13, 71, 161, 0.06);
+    border: 1px solid rgba(2, 132, 199, 0.12);
+}
+
+.pm-process-card-v2 {
+    border-color: #e2e8f0 !important;
+    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.pm-process-top-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-btn);
+    opacity: 0.8;
+    transition: all 0.35s ease;
+}
+
+.pm-process-card-v2:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(13, 71, 161, 0.12) !important;
+    border-color: rgba(2, 132, 199, 0.35) !important;
+}
+
+.pm-process-card-v2:hover .pm-process-top-bar {
+    height: 6px;
+    background: var(--gradient-secondary);
+}
+
+.pm-process-num-v2 {
+    font-size: 2.2rem;
+    line-height: 1;
+    background: var(--gradient-dark-blue);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.pm-process-icon-v2 {
+    width: 48px;
+    height: 48px;
+    background: rgba(2, 132, 199, 0.08);
+    color: var(--secondry-color);
+    font-size: 1.3rem;
+    border: 1px solid rgba(2, 132, 199, 0.18);
+    transition: all 0.35s ease;
+}
+
+.pm-process-card-v2:hover .pm-process-icon-v2 {
+    background: var(--gradient-btn);
+    color: var(--dark-navy);
+    border-color: transparent;
+    transform: rotate(6deg) scale(1.08);
+}
+
+.pm-process-desc-v2 {
+    line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   5. REVIEWS SPEECH BUBBLES & CARDS (city_reviews.php)
+   -------------------------------------------------------------------------- */
 .pm-city-reviews-card-v2 {
     background: var(--white);
     border-radius: 24px;
@@ -551,7 +703,6 @@
     font-style: italic;
 }
 
-/* Horizontal Scrollable Row for Reviews */
 .pm-rev-scroll-container {
     overflow-x: auto !important;
     scroll-behavior: smooth;
@@ -580,596 +731,9 @@
     scroll-snap-align: start;
 }
 
-@media (max-width: 991px) {
-    .pm-city-reviews-card-v2 {
-        padding: 24px;
-        border-radius: 18px;
-    }
-}
-
-@media (max-width: 768px) {
-    .pm-rev-scroll-item {
-        flex: 0 0 310px !important;
-        width: 310px !important;
-        max-width: 310px !important;
-    }
-}
-
-/* City FAQ Accordion Styling */
-.city-faq-item {
-    background: #ffffff;
-    border: 1px solid #eef2f6;
-    border-radius: 14px;
-    margin-bottom: 12px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.city-faq-item:hover {
-    border-color: rgba(2, 132, 199, 0.3);
-}
-
-.city-faq-btn {
-    width: 100%;
-    text-align: left;
-    background: #ffffff;
-    border: none;
-    padding: 16px 20px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.city-faq-btn:hover,
-.city-faq-btn.active {
-    color: var(--secondry-color);
-    background: rgba(2, 132, 199, 0.04);
-}
-
-.faq-q-icon {
-    color: var(--secondry-color);
-    font-size: 1.1rem;
-    flex-shrink: 0;
-}
-
-.faq-chevron {
-    margin-left: auto;
-    font-size: 0.9rem;
-    color: #94a3b8;
-    transition: transform 0.3s ease;
-}
-
-.city-faq-btn[aria-expanded="true"] .faq-chevron {
-    transform: rotate(180deg);
-    color: var(--secondry-color);
-}
-
-.city-faq-body {
-    padding: 6px 20px 18px 48px;
-    font-size: 0.9rem;
-    color: #64748b;
-    line-height: 1.7;
-}
-
-/* City Map Frame */
-.pm-city-map {
-    border-radius: 14px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    border: 1px solid #eef2f6;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .pm-city-content-card,
-    .city-content-card {
-        padding: 22px 18px;
-        border-radius: 16px;
-    }
-    .city-faq-body {
-        padding: 4px 16px 14px 40px;
-        font-size: 0.85rem;
-    }
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-/* ==============================================
-   CITY PAGE ABOUT SECTION STYLING (city_about.php)
-   ============================================== */
-.pm-city-about-section {
-    background-color: #f8fafc;
-    position: relative;
-    overflow: hidden;
-}
-
-.pm-about-main-card {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 42px;
-    box-shadow: 0 10px 40px rgba(13, 71, 161, 0.06);
-    border: 1px solid rgba(2, 132, 199, 0.12);
-    position: relative;
-}
-
-/* Eyebrow Tag Pill */
-.pm-about-eyebrow {
-    background: rgba(2, 132, 199, 0.08);
-    color: var(--secondry-color);
-    border: 1px solid rgba(2, 132, 199, 0.18);
-    font-size: 0.78rem;
-    letter-spacing: 0.5px;
-}
-
-.pm-about-eyebrow i {
-    color: var(--secondry-color);
-}
-
-/* Heading & Highlights */
-.pm-about-title {
-    font-size: clamp(1.6rem, 3vw, 2.3rem);
-    color: var(--text-dark);
-    line-height: 1.25;
-}
-
-.pm-about-accent {
-    color: var(--dark-navy);
-    position: relative;
-    display: inline-block;
-}
-
-.pm-about-accent::after {
-    content: "";
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 4px;
-    background: var(--gradient-btn);
-    border-radius: 2px;
-}
-
-/* Prose text */
-.pm-about-lead {
-    font-size: 1.05rem;
-    color: var(--text-dark);
-    font-weight: 500;
-    line-height: 1.65;
-}
-
-.pm-about-text {
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
-/* Features Grid Item */
-.pm-about-feat-item {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    transition: all 0.3s ease;
-}
-
-.pm-about-feat-item:hover {
-    background: var(--white);
-    border-color: rgba(2, 132, 199, 0.3);
-    box-shadow: 0 6px 20px rgba(13, 71, 161, 0.08);
-    transform: translateY(-2px);
-}
-
-.pm-about-feat-icon {
-    width: 42px;
-    height: 42px;
-    background: var(--gradient-btn);
-    color: var(--dark-navy);
-    font-size: 1.15rem;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
-}
-
-/* CTA Buttons */
-.pm-about-cta-buttons {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap !important;
-}
-
-.btn-pm-about-primary {
-    background: var(--gradient-btn);
-    color: var(--dark-navy);
-    border: none;
-    padding: 12px 24px;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.25);
-    white-space: nowrap;
-}
-
-.btn-pm-about-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(2, 132, 199, 0.35);
-    color: var(--dark-navy);
-}
-
-.btn-pm-about-outline {
-    background: transparent;
-    color: var(--dark-navy);
-    border: 2px solid var(--dark-navy);
-    padding: 12px 24px;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-
-.btn-pm-about-outline:hover {
-    background: var(--dark-navy);
-    color: var(--white);
-    transform: translateY(-2px);
-}
-
-@media (max-width: 575px) {
-    .pm-about-cta-buttons {
-        flex-wrap: nowrap !important;
-        gap: 8px !important;
-        width: 100%;
-    }
-    
-    .pm-about-cta-buttons .btn-pm-about-primary,
-    .pm-about-cta-buttons .btn-pm-about-outline {
-        flex: 1 1 50% !important;
-        width: 50% !important;
-        padding: 10px 8px !important;
-        font-size: 13px !important;
-        white-space: nowrap !important;
-        justify-content: center !important;
-    }
-
-    .pm-about-cta-buttons .btn-pm-about-primary i,
-    .pm-about-cta-buttons .btn-pm-about-outline i {
-        font-size: 12px !important;
-    }
-}
-
-/* ==============================================
-   3-IMAGE DESIGN BOX GRID STYLING
-   ============================================== */
-.pm-about-img-grid-container {
-    position: relative;
-    padding: 10px 0;
-}
-
-/* Background Glow Orb behind Image */
-.pm-about-img-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    height: 90%;
-    background: var(--gradient-btn);
-    filter: blur(45px);
-    opacity: 0.28;
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Decorative Pattern Ring */
-.pm-about-img-dots {
-    position: absolute;
-    top: -15px;
-    right: -15px;
-    width: 120px;
-    height: 120px;
-    background-image: radial-gradient(var(--secondry-color) 1.5px, transparent 1.5px);
-    background-size: 14px 14px;
-    opacity: 0.4;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.pm-about-img-box {
-    position: relative;
-    z-index: 1;
-    border-radius: 20px !important;
-    border: 3px solid var(--white) !important;
-    box-shadow: 0 10px 30px rgba(13, 71, 161, 0.12) !important;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    overflow: hidden;
-    background: var(--dark-navy);
-}
-
-.pm-about-img-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 18px 40px rgba(13, 71, 161, 0.22) !important;
-    border-color: var(--secondry-color) !important;
-}
-
-.pm-img-box-main {
-    height: 380px;
-}
-
-.pm-img-box-sub {
-    height: 182px;
-}
-
-.pm-grid-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.pm-about-img-box:hover .pm-grid-img {
-    transform: scale(1.08);
-}
-
-/* Image Box Badge Tag at bottom */
-.pm-img-box-badge {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-    right: 12px;
-    background: rgba(13, 71, 161, 0.85);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: var(--white);
-    font-size: 0.78rem;
-    font-weight: 700;
-    padding: 6px 12px;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Map Section Card */
-.pm-city-map-card {
-    background: var(--white);
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 6px 24px rgba(13, 71, 161, 0.05);
-    border: 1px solid #eef2f6;
-}
-
-.pm-about-title-sm {
-    font-size: 1.2rem;
-    font-weight: 800;
-    color: var(--text-dark);
-}
-
-/* Responsive Rules for About Section */
-@media (max-width: 991px) {
-    .pm-about-main-card {
-        padding: 24px;
-        border-radius: 18px;
-    }
-    .pm-about-img-grid-container {
-        margin-top: 25px;
-        padding: 10px 0;
-    }
-    .pm-img-box-main {
-        height: 300px;
-    }
-    .pm-img-box-sub {
-        height: 142px;
-    }
-}
-
-@media (max-width: 575px) {
-    .pm-img-box-main {
-        height: 240px;
-    }
-    .pm-img-box-sub {
-        height: 112px;
-    }
-}
-
-/* ==============================================
-   MAP SECTION 2-COLUMN STYLING (col-6 map & col-6 content)
-   ============================================== */
-.pm-city-map-card {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 36px;
-    box-shadow: 0 10px 40px rgba(13, 71, 161, 0.06);
-    border: 1px solid rgba(2, 132, 199, 0.12);
-}
-
-.pm-map-eyebrow {
-    background: rgba(2, 132, 199, 0.08);
-    color: var(--secondry-color);
-    border: 1px solid rgba(2, 132, 199, 0.18);
-    font-size: 0.78rem;
-    letter-spacing: 0.5px;
-}
-
-.pm-map-title {
-    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
-    color: var(--text-dark);
-    line-height: 1.3;
-}
-
-.pm-map-desc {
-    font-size: 0.95rem;
-    line-height: 1.7;
-}
-
-.pm-map-feat-item {
-    background: #f8fafc;
-    border-color: #e2e8f0 !important;
-    transition: all 0.3s ease;
-}
-
-.pm-map-feat-item:hover {
-    background: var(--white);
-    border-color: rgba(2, 132, 199, 0.3) !important;
-    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.06);
-    transform: translateY(-2px);
-}
-
-.pm-map-feat-icon {
-    width: 42px;
-    height: 42px;
-    background: var(--gradient-btn);
-    color: var(--dark-navy);
-    font-size: 1.15rem;
-    font-weight: 700;
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
-}
-
-.pm-city-map-wrapper {
-    border-radius: 20px !important;
-    border: 3px solid var(--white) !important;
-    box-shadow: 0 12px 35px rgba(13, 71, 161, 0.12) !important;
-    height: 100%;
-    min-height: 380px;
-}
-
-.pm-city-map-wrapper iframe {
-    width: 100%;
-    height: 100%;
-    min-height: 380px;
-    border: 0;
-}
-
-@media (max-width: 991px) {
-    .pm-city-map-card {
-        padding: 24px;
-    }
-    .pm-city-map-wrapper {
-        min-height: 300px;
-    }
-    .pm-city-map-wrapper iframe {
-        min-height: 300px;
-    }
-}
-
-/* ==============================================
-   RELOCATION PROCESS STEP-BY-STEP V2 ROADMAP STYLING (city_process.php)
-   ============================================== */
-.pm-city-process-card-v2 {
-    background: var(--white);
-    border-radius: 24px;
-    padding: 42px;
-    box-shadow: 0 10px 40px rgba(13, 71, 161, 0.06);
-    border: 1px solid rgba(2, 132, 199, 0.12);
-}
-
-.pm-process-card-v2 {
-    border-color: #e2e8f0 !important;
-    transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.pm-process-top-bar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--gradient-btn);
-    opacity: 0.8;
-    transition: all 0.35s ease;
-}
-
-.pm-process-card-v2:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 16px 36px rgba(13, 71, 161, 0.12) !important;
-    border-color: rgba(2, 132, 199, 0.35) !important;
-}
-
-.pm-process-card-v2:hover .pm-process-top-bar {
-    height: 6px;
-    background: var(--gradient-secondary);
-}
-
-.pm-process-num-v2 {
-    font-size: 2.2rem;
-    line-height: 1;
-    background: var(--gradient-dark-blue);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.pm-process-icon-v2 {
-    width: 48px;
-    height: 48px;
-    background: rgba(2, 132, 199, 0.08);
-    color: var(--secondry-color);
-    font-size: 1.3rem;
-    border: 1px solid rgba(2, 132, 199, 0.18);
-    transition: all 0.35s ease;
-}
-
-.pm-process-card-v2:hover .pm-process-icon-v2 {
-    background: var(--gradient-btn);
-    color: var(--dark-navy);
-    border-color: transparent;
-    transform: rotate(6deg) scale(1.08);
-}
-
-.pm-process-desc-v2 {
-    line-height: 1.6;
-}
-
-@media (max-width: 991px) {
-    .pm-city-process-card-v2 {
-        padding: 24px;
-        border-radius: 18px;
-    }
-}
-
-@media (max-width: 575px) {
-    .pm-about-main-card,
-    .pm-city-map-card,
-    .pm-city-reviews-card-v2,
-    .pm-city-process-card-v2 {
-        padding: 20px 16px !important;
-        border-radius: 16px !important;
-    }
-
-    .pm-about-eyebrow,
-    .pm-map-eyebrow,
-    .pm-process-eyebrow,
-    .pm-rev-eyebrow {
-        font-size: 0.72rem !important;
-        padding: 4px 10px !important;
-        letter-spacing: 0.2px !important;
-        max-width: 100%;
-        white-space: normal !important;
-    }
-
-    .pm-about-title,
-    .pm-map-title,
-    .pm-process-title,
-    .pm-rev-title {
-        font-size: 1.35rem !important;
-        line-height: 1.35 !important;
-    }
-
-    .pm-about-lead {
-        font-size: 0.92rem !important;
-        line-height: 1.6 !important;
-    }
-
-    .pm-about-text {
-        font-size: 0.88rem !important;
-        line-height: 1.6 !important;
-    }
-}
-
-/* ==============================================
-   PRICING TABLES STYLING (city_tables.php)
-   ============================================== */
+/* --------------------------------------------------------------------------
+   6. PRICING & RATE MATRIX TABLES (city_tables.php)
+   -------------------------------------------------------------------------- */
 .pm-city-tables-card-v2 {
     background: var(--white);
     border-radius: 24px;
@@ -1256,27 +820,300 @@ img {
     background: rgba(2, 132, 199, 0.1);
 }
 
+/* --------------------------------------------------------------------------
+   7. INTERACTIVE MAP SECTION (city_map.php)
+   -------------------------------------------------------------------------- */
+.pm-city-map-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 36px;
+    box-shadow: 0 10px 40px rgba(13, 71, 161, 0.06);
+    border: 1px solid rgba(2, 132, 199, 0.12);
+}
+
+.pm-map-eyebrow {
+    background: rgba(2, 132, 199, 0.08);
+    color: var(--secondry-color);
+    border: 1px solid rgba(2, 132, 199, 0.18);
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+}
+
+.pm-map-title {
+    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.pm-map-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.pm-map-feat-item {
+    background: #f8fafc;
+    border-color: #e2e8f0 !important;
+    transition: all 0.3s ease;
+}
+
+.pm-map-feat-item:hover {
+    background: var(--white);
+    border-color: rgba(2, 132, 199, 0.3) !important;
+    box-shadow: 0 4px 15px rgba(13, 71, 161, 0.06);
+    transform: translateY(-2px);
+}
+
+.pm-map-feat-icon {
+    width: 42px;
+    height: 42px;
+    background: var(--gradient-btn);
+    color: var(--dark-navy);
+    font-size: 1.15rem;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2);
+}
+
+.pm-city-map-wrapper {
+    border-radius: 20px !important;
+    border: 3px solid var(--white) !important;
+    box-shadow: 0 12px 35px rgba(13, 71, 161, 0.12) !important;
+    height: 100%;
+    min-height: 380px;
+}
+
+.pm-city-map-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    border: 0;
+}
+
+/* --------------------------------------------------------------------------
+   8. FAQ ACCORDION SECTION (city_faq.php)
+   -------------------------------------------------------------------------- */
+.city-faq-item {
+    background: #ffffff;
+    border: 1px solid #eef2f6;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.city-faq-item:hover {
+    border-color: rgba(2, 132, 199, 0.3);
+}
+
+.city-faq-btn {
+    width: 100%;
+    text-align: left;
+    background: #ffffff;
+    border: none;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.city-faq-btn:hover,
+.city-faq-btn.active {
+    color: var(--secondry-color);
+    background: rgba(2, 132, 199, 0.04);
+}
+
+.faq-q-icon {
+    color: var(--secondry-color);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.faq-chevron {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    transition: transform 0.3s ease;
+}
+
+.city-faq-btn[aria-expanded="true"] .faq-chevron {
+    transform: rotate(180deg);
+    color: var(--secondry-color);
+}
+
+.city-faq-body {
+    padding: 6px 20px 18px 48px;
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.7;
+}
+
+/* Common City Content Utilities */
+.pm-city-details-section {
+    background-color: #f8fafc;
+    padding: 50px 0 70px;
+}
+
+.pm-city-content-card,
+.city-content-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 6px 24px rgba(13, 71, 161, 0.05);
+    border: 1px solid #eef2f6;
+    transition: all 0.3s ease;
+}
+
+.pm-city-section-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 14px;
+    background: rgba(2, 132, 199, 0.08);
+    color: var(--secondry-color);
+    font-size: 0.78rem;
+    font-weight: 700;
+    border-radius: 20px;
+    border: 1px solid rgba(2, 132, 199, 0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.pm-city-section-title,
+.city-section-title-sm {
+    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
+
+.pm-city-accent {
+    color: var(--dark-navy);
+    position: relative;
+    display: inline-block;
+}
+
+.pm-city-accent::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gradient-btn);
+    border-radius: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   9. CONSOLIDATED RESPONSIVE MEDIA QUERIES
+   -------------------------------------------------------------------------- */
 @media (max-width: 991px) {
-    .pm-city-tables-card-v2 {
+    .pm-states-img { height: 170px; }
+    .pm-city-reviews-card-v2,
+    .pm-city-process-card-v2,
+    .pm-city-tables-card-v2,
+    .pm-about-main-card,
+    .pm-city-map-card {
         padding: 24px;
         border-radius: 18px;
     }
+    .pm-about-img-grid-container {
+        margin-top: 25px;
+        padding: 10px 0;
+    }
+    .pm-img-box-main { height: 300px; }
+    .pm-img-box-sub { height: 142px; }
+    .pm-city-map-wrapper,
+    .pm-city-map-wrapper iframe { min-height: 300px; }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 768px) {
+    .pm-list-service-page { padding: 40px 0 !important; }
+    .pm-list-card-body { padding: 10px 12px !important; gap: 8px; }
+    .pm-list-city-card .pm-list-icon { width: 32px; height: 32px; border-radius: 8px; }
+    .pm-list-city-card .pm-list-icon i { font-size: 0.95rem; }
+    .pm-list-city-tag { font-size: 0.62rem; }
+    .pm-list-city-title { font-size: 0.8rem; }
+    .pm-list-arrow { display: none; }
+    .pm-states-img { height: 150px; }
+    .pm-states-heading { font-size: 1.75rem; }
+    .pm-states-body { padding: 14px 16px; }
+    .pm-states-card-title { font-size: 0.95rem; }
+    .pm-rev-scroll-item {
+        flex: 0 0 310px !important;
+        width: 310px !important;
+        max-width: 310px !important;
+    }
+    .pm-city-content-card,
+    .city-content-card {
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+    .city-faq-body {
+        padding: 4px 16px 14px 40px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .row > div { padding-left: 6px; padding-right: 6px; }
+    .pm-states-img { height: 170px; }
+    .pm-img-box-main { height: 240px; }
+    .pm-img-box-sub { height: 112px; }
+    .pm-about-cta-buttons {
+        flex-wrap: nowrap !important;
+        gap: 8px !important;
+        width: 100%;
+    }
+    .pm-about-cta-buttons .btn-pm-about-primary,
+    .pm-about-cta-buttons .btn-pm-about-outline {
+        flex: 1 1 50% !important;
+        width: 50% !important;
+        padding: 10px 8px !important;
+        font-size: 13px !important;
+        white-space: nowrap !important;
+        justify-content: center !important;
+    }
+    .pm-about-cta-buttons .btn-pm-about-primary i,
+    .pm-about-cta-buttons .btn-pm-about-outline i { font-size: 12px !important; }
+
+    .pm-about-main-card,
+    .pm-city-map-card,
+    .pm-city-reviews-card-v2,
+    .pm-city-process-card-v2,
     .pm-city-tables-card-v2 {
         padding: 20px 16px !important;
         border-radius: 16px !important;
     }
 
+    .pm-about-eyebrow,
+    .pm-map-eyebrow,
+    .pm-process-eyebrow,
+    .pm-rev-eyebrow,
     .pm-table-eyebrow {
         font-size: 0.72rem !important;
         padding: 4px 10px !important;
+        letter-spacing: 0.2px !important;
+        max-width: 100%;
+        white-space: normal !important;
     }
 
+    .pm-about-title,
+    .pm-map-title,
+    .pm-process-title,
+    .pm-rev-title,
     .pm-table-title {
         font-size: 1.35rem !important;
+        line-height: 1.35 !important;
     }
+
+    .pm-about-lead { font-size: 0.92rem !important; line-height: 1.6 !important; }
+    .pm-about-text { font-size: 0.88rem !important; line-height: 1.6 !important; }
 
     .pm-table-tabs .nav-link {
         font-size: 12.5px !important;

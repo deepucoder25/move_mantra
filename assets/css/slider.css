@@ -207,6 +207,21 @@
     box-shadow: 0 0 0 3.5px rgba(2, 132, 199, 0.25) !important;
 }
 
+.input-wrap-custom.input-error-highlight {
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.input-wrap-custom.input-error-highlight .form-control-custom {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+    box-shadow: 0 0 0 3.5px rgba(239, 68, 68, 0.2) !important;
+}
+
+.input-wrap-custom.input-error-highlight .input-icon-custom {
+    color: #ef4444 !important;
+}
+
 .select-wrap-custom {
     position: relative;
 }

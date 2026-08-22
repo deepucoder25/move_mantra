@@ -87,6 +87,7 @@
 .abt-gradient-text {
     background: linear-gradient(120deg, var(--dark-navy), var(--secondry-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -148,6 +149,7 @@
     margin-bottom: 8px;
     background: linear-gradient(120deg, var(--dark-navy), var(--secondry-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -538,6 +540,7 @@
 .chs-gradient-text {
     background: linear-gradient(120deg, var(--dark-navy), var(--secondry-color));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 

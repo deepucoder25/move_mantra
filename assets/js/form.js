@@ -11,20 +11,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 transition: all 0.25s ease-in-out !important;
             }
             .field-error-msg {
-                color: #EF4444 !important;
+                color: #DC2626 !important;
                 font-size: 0.78rem !important;
-                font-weight: 600 !important;
-                margin-top: 5px !important;
-                margin-bottom: 2px !important;
+                font-weight: 700 !important;
+                margin-top: 4px !important;
+                margin-bottom: 4px !important;
                 text-align: left !important;
-                padding-left: 4px !important;
+                padding-left: 2px !important;
                 display: flex !important;
                 align-items: center !important;
                 gap: 5px !important;
+                width: 100% !important;
+                line-height: 1.25 !important;
                 animation: fieldErrorFadeIn 0.3s ease-out !important;
             }
+            .field-error-msg i {
+                color: #DC2626 !important;
+                font-size: 0.85rem !important;
+                flex-shrink: 0 !important;
+            }
             @keyframes fieldErrorFadeIn {
-                from { opacity: 0; transform: translateY(-5px); }
+                from { opacity: 0; transform: translateY(-4px); }
                 to { opacity: 1; transform: translateY(0); }
             }
         `;
@@ -37,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Real-time error clearing on typing
         form.querySelectorAll("input, textarea").forEach(input => {
             input.addEventListener("input", function() {
-                const group = this.closest(".cnt-input-group") || this.closest(".vrl-input-group-stylish") || this.closest(".qte-input-group") || this.closest(".field-wrap") || this.closest(".form-group") || this;
+                const group = this.closest(".input-wrap-custom") || this.closest(".cnt-input-group") || this.closest(".vrl-input-group-stylish") || this.closest(".qte-input-group") || this.closest(".field-wrap") || this.closest(".form-group") || this;
                 group.classList.remove("input-error-highlight");
                 this.classList.remove("input-error-highlight");
                 const nextErr = group.nextElementSibling;
@@ -68,8 +75,9 @@ document.addEventListener("DOMContentLoaded", function () {
             function showError(inputEl, message) {
                 if (!inputEl) return;
                 
-                const targetGroup = inputEl.closest(".cnt-input-group") || inputEl.closest(".vrl-input-group-stylish") || inputEl.closest(".qte-input-group") || inputEl.closest(".field-wrap") || inputEl.closest(".form-group") || inputEl;
+                const targetGroup = inputEl.closest(".input-wrap-custom") || inputEl.closest(".cnt-input-group") || inputEl.closest(".vrl-input-group-stylish") || inputEl.closest(".qte-input-group") || inputEl.closest(".field-wrap") || inputEl.closest(".form-group") || inputEl;
                 targetGroup.classList.add("input-error-highlight");
+                inputEl.classList.add("input-error-highlight");
                 
                 const errorDiv = document.createElement("div");
                 errorDiv.className = "field-error-msg";
