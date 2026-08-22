@@ -6,6 +6,11 @@
                 <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" onclick="setClose()">
                     <span aria-hidden="true"><i class="bi bi-x-lg"></i></span>
                 </button>
+                <div class="cnt-header-wave">
+                    <svg viewBox="0 0 500 30" preserveAspectRatio="none">
+                        <path d="M0,0 C150,25 350,5 500,20 L500,30 L0,30 Z"></path>
+                    </svg>
+                </div>
             </div>
             <form id="quotemodal" class="ajax-form" data-url="<?php echo site_url('contacts/booking') ?>" data-result="resultquotemodal" onsubmit="return false;">
                 <div class="row">

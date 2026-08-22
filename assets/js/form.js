@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Real-time error clearing on typing
         form.querySelectorAll("input, textarea").forEach(input => {
             input.addEventListener("input", function() {
-                const group = this.closest(".qte-input-group") || this.closest(".field-wrap") || this.closest(".form-group") || this;
+                const group = this.closest(".cnt-input-group") || this.closest(".vrl-input-group-stylish") || this.closest(".qte-input-group") || this.closest(".field-wrap") || this.closest(".form-group") || this;
                 group.classList.remove("input-error-highlight");
                 this.classList.remove("input-error-highlight");
                 const nextErr = group.nextElementSibling;
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
             function showError(inputEl, message) {
                 if (!inputEl) return;
                 
-                const targetGroup = inputEl.closest(".qte-input-group") || inputEl.closest(".field-wrap") || inputEl.closest(".form-group") || inputEl;
+                const targetGroup = inputEl.closest(".cnt-input-group") || inputEl.closest(".vrl-input-group-stylish") || inputEl.closest(".qte-input-group") || inputEl.closest(".field-wrap") || inputEl.closest(".form-group") || inputEl;
                 targetGroup.classList.add("input-error-highlight");
                 
                 const errorDiv = document.createElement("div");
