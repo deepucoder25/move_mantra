@@ -156,7 +156,6 @@ $floatingWhatsappLink = !empty($whatsapphtml)
           <ul class="list-unstyled d-flex flex-column gap-2 mb-0 footer-link-list">
             <li><a href="<?= site_url() ?>" class="text-white-50 text-decoration-none small d-flex align-items-center gap-2"><i class="bi bi-chevron-right text-primary-light"></i> Home</a></li>
             <li><a href="<?= site_url('about-us') ?>" class="text-white-50 text-decoration-none small d-flex align-items-center gap-2"><i class="bi bi-chevron-right text-primary-light"></i> About Us</a></li>
-            <li><a href="<?= site_url('our-services') ?>" class="text-white-50 text-decoration-none small d-flex align-items-center gap-2"><i class="bi bi-chevron-right text-primary-light"></i> Services</a></li>
             <li><a href="<?= site_url('our-branches') ?>" class="text-white-50 text-decoration-none small d-flex align-items-center gap-2"><i class="bi bi-chevron-right text-primary-light"></i> Network</a></li>
             <li><a href="<?= site_url('blog') ?>" class="text-white-50 text-decoration-none small d-flex align-items-center gap-2"><i class="bi bi-chevron-right text-primary-light"></i> Blog</a></li>
             <li><a href="<?= site_url('faqs') ?>" class="text-white-50 text-decoration-none small d-flex align-items-center gap-2"><i class="bi bi-chevron-right text-primary-light"></i> FAQs</a></li>
